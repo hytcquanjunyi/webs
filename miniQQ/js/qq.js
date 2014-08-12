@@ -124,17 +124,7 @@ $(function(){
 	});
 	/************点击设置消息相关设置***************/
 	$("#clickNotifySetting").click(function(){
-		var html ="";
-		html += '		<div class="NotifySettingArea">';
-		html += '			<div class="NotifySettingHead">';
-		html += '				<div class="NotifySettingtMenu"></div>';
-		html += '				<div class="NotifySettingTitle">设置</div>';
-		html += '				<div class="NotifySettingClose">关闭</div>';
-		html += '			</div>';
-		html += '			<div class="chatHistory"></div>';
-		html += '			<div class="chatControl"></div>';
-		html += '		</div>';
-		$("body").append(html);
+		
 	});
 
 	/************点击设置中关于QQ***************/
@@ -147,5 +137,6 @@ $(function(){
 			$(this).find(".more_icon").css({"background": "url(css/images/open_arrow_fire.png) no-repeat center","background-size":"100% 100%"});
 			$("#about_qq_all").show();
 		}
+
 	});
 });
