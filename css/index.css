@@ -1,0 +1,19 @@
+*{margin: 0;padding: 0}
+ul,li{list-style: none;}
+img{border:0;}
+
+#clockArea{width: 600px; height: 30px; margin: 30px auto;}
+#date{width: 300px; height:30px; float:left;}
+#time{width: 240px;height: 30px;float: right;}
+.digit{width: 30px;height: 30px; background-image:url("images/digit.png"); float: left; }
+.heng{background-position: 0 -330px;}
+.mao{background-position: 0 -300px;}
+
+
+#all{width: 858px; margin: auto;}
+.zuopinArea{width: 200px; height: 80px; border-radius: 5px; border: 1px solid #ccc; float: left; margin-left: 10px; padding-top: 10px;}
+.zuopinLogo{width: 200px; height: 60px;}
+.zuopinLogo img{width: 200px; height: 60px;}
+.zuopinName{width: 200px; height: 20px;text-align: center; line-height: 20px;}
+.zuopinName a{font-size: 12px; font-family:宋体; text-decoration: none; color: #000; }
+
