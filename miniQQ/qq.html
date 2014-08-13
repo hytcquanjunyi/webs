@@ -241,10 +241,53 @@
 	<div class="NotifySettingArea">
 		<div class="NotifySettingHead">
 			<div class="NotifySettingtMenu"></div>
-			<div class="NotifySettingTitle">设置</div>
+			<div class="NotifySettingTitle">消息相关设置</div>
 			<div class="NotifySettingClose">关闭</div>
 		</div>
-		<div class="NotifySetting"></div>
+		<div class="NotifySetting">
+			<div class="group">
+				<div class="row clearfix">
+			        <span class="label">声音</span>
+			        <label class="switch switch-white" cmd="clickVoiceSetting">
+			            <input id="enableVoiceBtn" type="checkbox" checked="">
+			            <span>
+			        </span>
+			        </label>    
+			    </div>
+			    <div class="row clearfix">
+			        <span class="label">消息浮窗</span>
+			        <label class="switch switch-white" cmd="clickNotificationSetting">
+			            <input id="enableNotificationBtn" type="checkbox" checked="">
+			            <span>
+			        </span></label>
+				</div>
+			</div>
+
+		    <div class="group">
+			    <div class="row">
+			        <div class="clearfix">
+			            <span class="label">HTTPS</span>
+			            <label class="switch switch-white" cmd="clickHttpsSetting">
+			                <input id="enableHttpsBtn" type="checkbox">
+			                <span>
+			            </span></label>
+			        </div>
+			        <div class="tips">使用 HTTPS 加密聊天内容</div>
+			    </div>
+			</div>
+
+			<div class="group">
+			    <div class="row">
+			        <div class="clearfix">
+			            <span class="long_label">按Ctrl+Enter键发送消息</span>
+			            <label class="switch switch-white" cmd="clickCtrlEnterSetting">
+			                <input id="enableCtrlEnterBtn" type="checkbox">
+			                <span>
+			            </span></label>
+			        </div>
+			    </div>
+			</div>
+		</div>
 	</div>
 
 

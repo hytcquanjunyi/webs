@@ -125,7 +125,12 @@ $(function(){
 	/************点击设置消息相关设置***************/
 	$("#clickNotifySetting").click(function(){
 		
+		$(".NotifySettingArea").show();
 	});
+	$(".NotifySettingClose").click(function(){
+		$(".NotifySettingArea").hide();
+	});
+
 
 	/************点击设置中关于QQ***************/
 	$("#aboutQQ").click(function(){
