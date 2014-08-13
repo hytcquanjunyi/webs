@@ -5,6 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
@@ -12,7 +13,39 @@
 		
 	</div>
 	<div class="LoginArea">
-		
+		<div class="DraggableHeader">
+			<span class="DraggableHeaderTitle">登录百度帐号</span>
+			<div class="closeLoginAbtn"></div>
+		</div>
+		<div class="passport-login-pop-api">
+			<p class="pspace30"></p>
+			<p class="pmarginbottom15">
+				<label class="userNameLabel LoginLabel"></label>
+				<input id="LoginUserName" placeholder="手机/邮箱" class="LogintextClass">
+			</p>
+			<p class="pmarginbottom15">
+				<label class="passwordLabel LoginLabel"></label>
+				<input id="LoginPassWord" placeholder="密码" class="LogintextClass" type="password">
+			</p>
+			<p class="pmarginbottom15">
+				<input id="memberPass" type="checkbox" name="memberPass" class="pass-checkbox-input" checked="checked" value="sss">
+				<label  id="memberPassLabel" class="">下次自动登录</label>
+			</p>
+			<p class="pmarginbottom45">
+				<input id="Loginsubmit" type="button" value="登录">
+				<a class="pass-reglink" href="#" target="_blank">立即注册</a>
+				<a class="pass-fgtpwd" href="#" target="_blank">忘记密码？</a>
+			</p>
+		</div>
+		<div id="otheraccountArea">
+			<div class="otheraccountArea-title">可以使用以下方式登录</div>
+			<ul class="bd-acc-list">
+				<li class="bd-acc-qzone"  id=""><a class="phoenix-btn-item" href="#" title="QQ帐号"></a></li>
+				<li class="bd-acc-tsina"  id=""><a class="phoenix-btn-item" href="#" title="新浪微博"></a></li>
+				<li class="bd-acc-renren" id=""><a class="phoenix-btn-item" href="#" title="人人网"></a></li>
+				<li class="bd-acc-message" id=""><a class="phoenix-btn-item" href="#" title="短信"></a></li>
+			</ul>
+		</div>
 	</div>
 	<div id="wrapper">
 		<div id="head">
@@ -33,15 +66,17 @@
 					<p class="space"></p>
 					<p class="p">
 						<label>手机/邮箱</label>
-						<input id="regaccount" class="textClass" type="text" >	
+						<input id="regaccount" placeholder="手机/邮箱" class="textClass" type="text" >
+						<div id="accountclear" class="clearword"></div>	
 					</p>
 					<p class="p">
 						<label>密码</label>
-						<input id="regpassword" class="textClass" type="text" >	
+						<input id="regpassword" placeholder="密码" class="textClass" type="text" >
+						<div id="accountclear" class="clearword"></div>		
 					</p>
 					<p class="p">
 						<label>确认密码</label>
-						<input id="regconfrimpassword" class="textClass" type="text" >	
+						<input id="regconfrimpassword" placeholder="密码确认" class="textClass" type="text" >	
 					</p>
 					<p class="p ppadding"><input id="submitbtn" class="submitbtnClass" type="button" value="注册" ></p>
 
