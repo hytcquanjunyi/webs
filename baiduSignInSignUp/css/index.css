@@ -1,0 +1,172 @@
+*{margin: 0;padding: 0;}
+ul,li{list-style: none;}
+img{border:0;}
+.clearfix:after {
+	content: '\20';
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+
+.mengban{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 20;
+	background-color: #999;
+	opacity: 0.3;
+	display: none;
+}
+.LoginArea{
+	display: none;
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 6px ; 
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background-color: #fff;
+	z-index: 21;
+}
+#wrapper{width: 100%;}
+#head, #content, #foot{width: 980px; margin: auto;}
+#head{height: 75px;}
+
+#head .mod-header {
+	float: left;
+	display: block;
+	width: 330px;
+	background: url(images/logo_eeeeeb34.png) right no-repeat;
+	font-size: 66px;
+}
+#login_link{}
+
+.login-link{
+	height: 75px;
+	line-height: 75px;
+	float: right;
+	color: #666;
+	font-size: 12px;
+}
+.login-link span{
+	float: left;
+	display: block;
+	margin-right: 5px;
+}
+.login-btn{
+	font-weight: bold;
+	color: #666;
+	height: 32px;
+	width: 64px;
+	border: none;
+	background: url(images/reg_icons_4580a04f.png) no-repeat 0 -48px;
+	cursor: pointer;
+}
+
+#nav .nav-2 {
+	height: 20px;
+	background: url(images/reg_hr_e84a6d3b.png) no-repeat center top;
+}
+
+.tang-pass-reg {
+	position: relative;
+	width: 720px;
+	overflow: hidden;
+}
+.reg-content {
+	float: left;
+}
+
+.reg-sms {
+	width: 258px;
+	height: 208px;
+	border: 1px solid #d1eeff;
+	background-color: #f5fbff;
+	margin-top: 40px;
+	float: right;
+}
+.space{height: 40px;}
+.p{ margin-bottom: 20px; width: 100%;}
+.p label{
+	width: 68px;
+	height: 42px; 
+	margin-right: 10px; 
+	text-align: right;
+	float: left;
+	line-height: 42px;
+	font-size: 14px;
+	color: #666;
+	font-weight: bold;
+}
+.textClass{
+	width: 328px;
+	height: 16px;
+	padding: 11px 10px;
+	border: 1px solid #ddd;
+}
+.ppadding{padding-left: 78px;width: 80%;}
+.submitbtnClass{
+	width: 350px;
+	height: 50px;
+	background-color: #3f89ec; 
+	border-radius: 5px; 
+	border: 0; 
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	color: #fff;
+}
+.submitbtnClass:hover{background-color: #4490f7;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.reg-sms .reg-sms-title {
+margin: 0 10px;
+padding-left: 30px;
+height: 50px;
+line-height: 50px;
+background: url(images/phone_55e296f2.png) left center no-repeat;
+border-bottom: 1px solid #e6edf2;
+font-size: 14px;
+color: #666;
+}
+.reg-sms .reg-sms-p-text {
+color: #666;
+font-size: 12px;
+margin-top: 20px;
+margin-bottom: 5px;
+}
+
+.reg-sms-p {
+margin-left:10px;
+}
+.reg-sms .reg-sms-p-warn {
+font-size: 14px;
+color: #f18300;
+font-weight: bold;
+}
+
+.reg-sms-p-last {
+color: #666;
+font-size: 12px;
+margin-top: 5px;
+}
