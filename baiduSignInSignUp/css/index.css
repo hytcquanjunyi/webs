@@ -220,7 +220,7 @@ cursor: pointer;
 	float: right;
 }
 .space{height: 40px;}
-.p{ margin-bottom: 20px; width: 100%;}
+.p{ margin-bottom: 20px; width: 100%; position: relative;}
 .p label{
 	width: 68px;
 	height: 42px; 
@@ -238,6 +238,30 @@ cursor: pointer;
 	padding: 11px 10px;
 	border: 1px solid #ddd;
 }
+
+.clearword{
+	display: block;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	background: url(images/reg_icons_4580a04f.png) -32px -24px no-repeat;
+	top: 12px;
+	left: 396px;
+	cursor: pointer;
+	opacity: 0;
+}
+.clearword:hover{
+	background-position: -48px -24px;
+}
+#Loginaccountclear{left: 320px;}
+#Loginpasswordclear{left: 320px;}
+
+
+#tips1{display:block; width: 250px;font-size: 8px;color: #ccc; float: right; margin-right: 30px;}
+#tips2{display: block;visibility:  hidden;float: right; width: 200px; height:70px; border: 1px solid #ccc; margin-right: 70px; box-shadow: 1px 1px 2px; background-color: #f6f6f6;}
+#tips2 span{background: url(images/reg_icons_4580a04f.png) no-repeat;background-position: -77px -115px; font-size: 12px; display: block; padding-left: 25px; margin-top: 5px;color: #777;}
+#tips3{width: 100px;font-size: 8px;color: #ccc; display: block; position: absolute; top:10px; left: 440px; visibility: hidden;}
+
 .ppadding{padding-left: 78px;width: 80%;}
 .submitbtnClass{
 	width: 350px;

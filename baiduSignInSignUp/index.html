@@ -22,14 +22,17 @@
 			<p class="pmarginbottom15">
 				<label class="userNameLabel LoginLabel"></label>
 				<input id="LoginUserName" placeholder="手机/邮箱" class="LogintextClass">
+				<span id="Loginaccountclear" class="clearword"></span>
 			</p>
 			<p class="pmarginbottom15">
 				<label class="passwordLabel LoginLabel"></label>
 				<input id="LoginPassWord" placeholder="密码" class="LogintextClass" type="password">
+				<span id="Loginpasswordclear" class="clearword"></span>
 			</p>
 			<p class="pmarginbottom15">
 				<input id="memberPass" type="checkbox" name="memberPass" class="pass-checkbox-input" checked="checked" value="sss">
 				<label  id="memberPassLabel" class="">下次自动登录</label>
+
 			</p>
 			<p class="pmarginbottom45">
 				<input id="Loginsubmit" type="button" value="登录">
@@ -58,7 +61,12 @@
 			</div>
 		</div>
 		<div id="nav"> 
-            <div class="nav-2"> <div class="mod-nav clearfix"> <h1 class="page-type-notab"></h1>  </div></div>         </div>
+            <div class="nav-2"> 
+            	<div class="mod-nav clearfix">
+            		<h1 class="page-type-notab"></h1>  
+            	</div>
+            </div>         
+        </div>
 		</div>
 		<div id="content">
 			<div class="mod-reg clearfix mod-reg-">
@@ -66,17 +74,26 @@
 					<p class="space"></p>
 					<p class="p">
 						<label>手机/邮箱</label>
-						<input id="regaccount" placeholder="手机/邮箱" class="textClass" type="text" >
-						<div id="accountclear" class="clearword"></div>	
+						<input id="regaccount" placeholder="手机/邮箱" class="textClass" type="text" />
+						<span id="regaccountclear" class="clearword"></span>
+						<span id="tips1">请输入中国大陆手机号或常用邮箱，可用于登录和找回密码，注册成功后全百度通用</span>	
 					</p>
 					<p class="p">
 						<label>密码</label>
-						<input id="regpassword" placeholder="密码" class="textClass" type="text" >
-						<div id="accountclear" class="clearword"></div>		
+						<input id="regpassword" placeholder="密码" class="textClass" type="text" />
+						<span id="regpasswordclear" class="clearword"></span>
+						<span id="tips2">
+							<span id="c1">长度为6~14个字符</span>
+							<span id="c2">支持数字，大小写和标点符号</span>
+							<span id="c3">不允许有空格</span>
+						</span>
+
 					</p>
 					<p class="p">
 						<label>确认密码</label>
-						<input id="regconfrimpassword" placeholder="密码确认" class="textClass" type="text" >	
+						<input id="regconfrimpassword" placeholder="密码确认" class="textClass" type="text" >
+						<span id="regconfrimpasswordclear" class="clearword"></span>
+						<span id="tips3">两次密码不符合</span>	
 					</p>
 					<p class="p ppadding"><input id="submitbtn" class="submitbtnClass" type="button" value="注册" ></p>
 
