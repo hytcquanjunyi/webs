@@ -144,4 +144,37 @@ $(function(){
 		}
 
 	});
+
+
+
+	/*************QQ表情换页****************/
+		$(".btnsWrap li").click(function(){
+			$(".btnsWrap li").removeClass("selected");
+			$(this).addClass("selected");
+			var index=$(this).attr("_index");
+			$(".wrap").animate({"margin-left": -index*700+"px"},500);
+		});
+	/**********添加qq表情************/
+		$(".faceIteam1 i").click(function(){
+			
+			$(".input").val($(".input").val()+$(this).attr("title"));
+		});
+		/*******发送消息********/
+		$(".send_chat_btn").click(function(){
+			var html="";
+			html +="	<div class='talkcontent'>";
+			html +="		<div class='talktime'>	";		
+			html +="				<span class='chattime'>16:30</span>";		
+			html +="		</div>";
+			html +="		<a href='' class='talkclicon' style='background-image: url();'></a>";
+			html +="		<div class='talkcleft'>					";
+			html +="			<span class='talkclname'>雪做的花冠</span>";				
+			html +="			<p class='talkcltxt'>"+$(".input").val()+"</p>";			
+			html +="		</div>";
+			html +="	</div>";
+			
+			$(".chatHistory").append(html);
+			$(".input").val("");
+		});
+
 });

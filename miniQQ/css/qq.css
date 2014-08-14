@@ -449,8 +449,197 @@ line-height: 20px;
 
 .qqChat{ width: 700px; height: 500px; margin: 30px 0 0 80px;  position: absolute;  }
 .chatTitle{cursor: pointer; width: 660px; height: 32px; padding: 6px 20px 6px 20px;  background-image: linear-gradient(rgb(85, 85, 85), rgb(34, 34, 34)); border-top-left-radius: 15px; border-top-right-radius: 15px; }
-.chatHistory{width: 100%; height: 400px; background-color:#e9e9e9;}
+.chatHistory{width: 100%; height: 400px; background-color:#e9e9e9;overflow: auto;}
+.talkcontent {
+width: 680px;
+height: auto;
+padding: 0px 10px 0 10px;
+min-height: 110px;
+}
+.talktime {
+width: 680px;
+height: 17px;
+text-align: center;
+}
+.talkclicon {
+display: block;
+width: 40px;
+height: 40px;
+margin-left: 10px;
+float: right;
+background-image: "";
+}
+.talkcleft {
+display: block;
+float: right;
+width: 340px;
+height: auto;
+padding: 0 0 0 270px;
+}
+.talkclname {
+height: 14px;
+width: 340px;
+text-align: right;
+font-size: 14px;
+margin-bottom: 10px;
+display: block;
+text-shadow: 1px 1px 1px #fff;
+}
+.talkcltxt {
+width: 320px;
+height: auto;
+padding: 10px 10px 10px 10px;
+text-align: left;
+display: inline-block;
+border-radius: 5px;
+box-shadow: 1px 1px 5px #000;
+line-height: 1.4;
+background: linear-gradient(#fff,#e1e1e1);
+min-height: 22px;
+max-height: 380px;
+}
+.chattime {
+width: 35px;
+height: 13px;
+padding: 2px 8px 2px 8px;
+text-align: center;
+color: rgba(255,255,255,.8);
+background: rgba(0,0,0,.3);
+font-size: 13px;
+border-radius: 8px;
+display: inline-block;
+line-height: 13px;
+}
+
+
 .chatControl{width: 100%; height: 50px; background-image: linear-gradient(rgb(85, 85, 85), rgb(34, 34, 34));}
+
+.chat_toolbar {border-radius: 0 0 5px 5px;padding: 3px 10px 5px 6px; height: 42px;width: 684px;}
+.add_face_btn {border: 0;background: 0;width: 38px; float: left; }
+.chat_toolbar .btn {display: block; font-family: '微软雅黑','Helvetica Neue',Helvetica,Arial,sans-serif;
+font-size: 16px;}
+.btn {cursor: pointer!important;}
+.btn_face {padding: 5px;}
+.btn_face .btn_img {background: url(images/chat_bottombar_icon_face.png);display: block; background-size: 100% 100%!important; margin: 0 4px}
+.chat_toolbar .btn_img {width: 30px;height: 30px;}
+.chat_textarea{
+	width: 550px;
+	border-radius: 5px;
+	padding: 5px 10px;
+	height: 32px;
+	margin: 5px 10px 5px 6px;
+	max-height: 80px;
+	overflow: hidden;
+	float: left;
+	display: block;
+}
+.input_white, .icon_input_white {
+color: #333;
+background: #F9F9F9;
+box-shadow: inset 0 1px 4px rgba(0, 0, 0, .2);
+}
+.input, .icon_input {
+
+}
+
+.send_chat_btn {
+width: 50px;float: left; border: 0;
+font-size: 14px;
+border-radius: 5px;
+vertical-align: middle;
+margin-top: 5px;
+}
+.btn_small {
+padding: 6px 10px!important;
+display: block!important;
+}
+.btn_small {
+display: inline-block;
+padding: .57em 10px;
+width: auto;
+font-size: 14px;
+vertical-align: middle;
+}
+.btn_blue {
+border-color: #044062;
+background: #396B9E;
+
+text-shadow: 0 1px 1px #194B7E;
+}
+.qq_face_area {
+display: none;
+width: 700px;
+text-align: center;
+margin: 0 auto;
+overflow: hidden;
+cursor: pointer;
+}
+.wrap {
+width: 1000%;
+height: 100%;
+margin: 0 auto;
+
+}
+.qq_face_area .wrap li {
+list-style: none;
+height: 280px;
+float: left;
+overflow: hidden;
+}
+.faceIteam {
+width: 700px!important;
+list-style: none;
+height: 144px;
+float: left;
+background-repeat: no-repeat center center;
+}
+.faceIteam1 {
+background-image: url(images/1.jpg);
+}
+.faceIteam2 {
+background-image: url(images/2.jpg);
+}
+.faceIteam3 {
+background-image: url(images/3.jpg);
+}
+.faceIteam4 {
+background-image: url(images/4.jpg);
+}
+.faceIteam5 {
+background-image: url(images/5.jpg);
+}
+.faceIteam6 {
+background-image: url(images/6.jpg);
+}
+.qq_face_area ul li i {
+margin-left: 12px;
+width: 87px;
+height: 92px;
+display: block;
+float: left;
+}
+.qq_face_area ul li i:hover{
+	border: 1px solid blue;
+}
+
+
+
+.btnsWrap {
+padding: 0 0 10px 290px;
+}
+.btnsWrap>li {
+float: left;
+list-style-type: none;
+margin: 5px 10px 0 0;
+padding: 2px;
+width: 10px;
+height: 10px;
+border-radius: 10px;
+background: gray;
+}
+
+
+
 
 
 .chatMenu{width: 60px; height: 32px; border: 1px solid #222;border-radius: 7px; float: left;}
