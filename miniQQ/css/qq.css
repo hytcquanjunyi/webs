@@ -14,7 +14,10 @@ top: 0;
 left: 0;
 z-index: -1;
 }
-
+#main{
+	width: 100%;
+	height: 100%;
+}
 #qq{width: 280px; height: 515px; margin: 30px 0 0 30px; border: 1px solid #bbb; border-radius: 10px; box-shadow: 3px 3px 10px rgba(0,0,0,0.29); float: left;}
 #qqTitle{ width: 100%; height: 36px;}
 #qqVersion{display: inline-block; float: left; font-size: 14px; color: #666; text-shadow:1px 1px 1px #fff; font-family: Arial; padding: 10px 0 0 15px; cursor: pointer; font-weight: bold;}
@@ -566,6 +569,9 @@ background: #396B9E;
 
 text-shadow: 0 1px 1px #194B7E;
 }
+.face_images{
+	display: none;
+}
 .qq_face_area {
 display: none;
 width: 700px;
@@ -573,6 +579,10 @@ text-align: center;
 margin: 0 auto;
 overflow: hidden;
 cursor: pointer;
+border-bottom-left-radius: 5px;
+border-bottom-right-radius: 5px;
+
+background-color: #ccc;
 }
 .wrap {
 width: 1000%;
