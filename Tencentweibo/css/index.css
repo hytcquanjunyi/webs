@@ -1,8 +1,26 @@
 *{margin: 0;padding: 0;}
 ul,li{list-style: none;}
 img{border:0;}
-body{font-family: 宋体;font-size: 14px;}
+body{font: 12px/1.75 Tahoma,Arial,sans-serif;}
+body {
+color: #333;
+background: #73CFF1 url(images/wrapbg_v0.0.1.jpg) center top no-repeat;
+}
 
+input{
+	outline: none;
+	resize: none;
+}
+
+.clear::after{
+	content: '.';
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+	font-size: 0;
+	line-height: 0;
+}
 
 .w_head_outer{
 	position: fixed; 
@@ -55,6 +73,7 @@ body{font-family: 宋体;font-size: 14px;}
 	padding-right: 10px;
 	height: 12px;
 	color: #fefefe;
+	font-size: 12px;
 	text-decoration: none;
 }
 .ico_hot_mini {
@@ -68,7 +87,7 @@ body{font-family: 宋体;font-size: 14px;}
 }
 #topNav2{
 	float: left;
-	margin-left: 20px;
+	margin-left: 100px;
 }
 
 .qk_nav_item a {
@@ -82,6 +101,7 @@ body{font-family: 宋体;font-size: 14px;}
 	float: left;
 	padding-top: 7px;
 }
+
 .t{
 	display: block;
 	width: 20px;
@@ -104,6 +124,33 @@ body{font-family: 宋体;font-size: 14px;}
 .notice .t{
 	background-position: -60px 0;
 }
+.tSearchNew {
+	width: 162px;
+	height: 23px;
+	float: right;
+	margin-top: 6px;
+}
+.inputNew{
+	float: left;
+	width: 125px;
+	padding-left: 7px;
+	height: 23px;
+	border: 0;
+	border-radius: 2px 0 0 2px;
+}
+.inputBtn {
+	width: 23px;
+	height: 23px;
+	margin: 0;
+	float: left;
+	text-indent: -9999em;
+	border: 0;
+	cursor: pointer;
+	background: url(images/head_search_20120517.png) no-repeat;
+	background-position: 0 0;
+	border-radius: 0 2px 2px 0;
+}
+
 
 .right_top_conner{
 	position: absolute;
@@ -124,4 +171,210 @@ body{font-family: 宋体;font-size: 14px;}
 }
 .right_top_conner:hover{
 	background-color: #006a92;
-};
+}
+
+#topWrap {
+	padding-top: 55px;
+}
+#mainWrapper {
+width: 960px;
+min-height: 900px;
+margin: 0 auto;
+border-radius: 5px 5px 0 5px;
+background-color: #C9F1FF;
+}
+.main{
+	width: 640px;
+	min-height: 900px;
+	float: left;
+	overflow-y:visible;
+	border-right: 1px solid #BBDAE3;
+	border-radius: 5px 0 0 5px; 
+	background: white;
+}
+.talkBox{
+	padding: 0 30px 10px 30px;
+	border-radius: 5px 0 0 0;
+	margin-bottom: 10px;
+	position: relative;
+}
+.talkBox h2 {
+	height: 30px;
+	overflow: hidden;
+	padding: 10px 5px 0;
+	font: normal 16px/31px "MicroSoft YaHei","SimHei";
+	color: #999;
+}
+.talkBox h2 label{
+	float: left;
+}
+.talkBox h2 .tit_topic {
+	font-size: 12px;
+	float: right;
+	color: #889DB6;
+	text-decoration: none;
+}
+.talkBox h2 .tit_topic:hover{
+	text-decoration:underline;
+}
+.sendCnt {
+	border: 1px solid #D0D0D0;
+	line-height: 1.231;
+	border-radius: 3px;
+	position: relative;
+}
+.talkBox .cntBox {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	background-color: white;
+	border-radius: 3px 3px 0 0;
+}
+.talkBox .cntBox textarea{
+	width: 97.9%;
+	height: 63px;
+	padding: 3px 1%;
+	margin: -1px auto 0;
+	overflow-y: auto;
+	font: normal 14px/21px Tahoma,Arial;
+	border: 0;
+	border-radius: 8px 8px 0 0;
+	background: transparent;
+	outline: none;
+	resize: none;
+}
+.talkBox .countTxtBox_v3 {
+	
+	height: 18px;
+	padding-right: 10px;
+}
+.talkBox .countTxt {
+	color: #999;
+	float: right;
+}
+
+.insertFun {
+	background: white;
+	padding: 6px 0 4px;
+	width: 100%;
+	height: 30px;
+}
+
+.sendList {
+	position: relative;
+
+	float: left;
+	min-width: 45px;
+	margin: 3px 6px 0 0;
+}
+.insertFace {
+	margin-left: 4px;
+}
+.insertFun .txt, .insertFun .more {
+	display: inline-block;
+	position: relative;
+	height: 16px;
+	height: 14pxurl(0);
+	padding-left: 19px;
+	padding-bottom: 5px;
+
+	color: #999;
+	text-decoration: none;
+}
+
+
+.insertFun .sico {
+	position: absolute;
+	left: 0;
+	top: 3px;
+	cursor: pointer;
+}
+.sico{
+	background: url(images/b1_20140716.png) no-repeat;
+}
+.ico_face {
+	float: right;
+	width: 16px;
+	height: 16px;
+	background-position: -120px -33px;
+}
+.ico_pic {
+	float: right;
+	width: 16px;
+	height: 16px;
+	background-position: 0 -33px;
+}
+
+.ico_at {
+	float: right;
+	width: 16px;
+	height: 16px;
+	background-position: -144px -33px;
+}
+.ico_feel {
+	float: right;
+	width: 16px;
+	height: 16px;
+	width: 16px;
+	background-position: -168px -53px;
+}
+.ic_baoliao {
+	float: right;
+	width: 16px;
+	height: 16px;
+	background-position: -272px -184px;
+}
+.ic_picVote {
+	float: right;
+	width: 16px;
+	height: 16px;
+	background-position: -225px -201px;
+}
+
+.sendFun {
+	height: 30px;
+	overflow: hidden;
+	float: right;
+}
+.btnHasStr {
+	float: right;
+	color: #999;
+	line-height: 33px;
+	overflow: visible;
+	width: 85px;
+	height: 27px;
+	background: url(images/b1_20140716.png) no-repeat;
+	background-position: 0 0;
+	border: 0;
+	cursor: pointer;
+}
+.btnHasStr:hover{
+	background-position: -85px 0;
+}
+
+.main_bn{
+	height: 92px;
+	width: 640px;
+	margin-bottom: 13px;
+	padding: 0 0 10px;
+}
+.main_bn_in {
+	position: relative;
+	padding-left: 30px;
+}
+
+.main_bn_stage {
+	width: 580px;
+	height: 90px;
+	overflow: hidden;
+	position: relative;
+}
+.slideArea{width: 1000%; height: 90px;overflow: hidden;}
+.slidePic{width: 580px;height: 90px;float: left;}
+
+
+.side {
+	float: right;
+	padding-bottom: 30px;
+	width: 319px;
+}

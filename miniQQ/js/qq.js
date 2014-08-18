@@ -659,7 +659,7 @@ $(function(){
 			html +="		</div>";
 			html +="		<a href='' class='talkclicon' style='background-image: url();'></a>";
 			html +="		<div class='talkcleft'>					";
-			html +="			<span class='talkclname'>雪做的花冠</span>";				
+			html +="			<span class='talkclname'>小明</span>";				
 			html +="			<p class='talkcltxt'>"+txt+"</p>";			
 			html +="		</div>";
 			html +="	</div>";
