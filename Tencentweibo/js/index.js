@@ -2,10 +2,10 @@ $(function(){
 	$(document).scroll(function(){
 		if($(this).scrollTop()>=325){
 			//alert(123);
-			$(".ui_tab ").css({"position":"fixed","top":"36px"});
+			$(".AL ").addClass("ui_tab_fixed");
 		}
 		else{
-			$(".ui_tab ").css({"position":""});
+			$(".AL ").removeClass("ui_tab_fixed");
 		}
 	});
 });
