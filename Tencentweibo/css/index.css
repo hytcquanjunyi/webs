@@ -657,7 +657,7 @@ color: #006a92;
 .bot .left{
 	float: left;
 	height: 19px;
-	width: 65px;
+	/*width: 65px;*/
 	margin-top: 2px;
 	margin-right: 10px;
 	line-height: 19px;
@@ -744,6 +744,7 @@ color: #006a92;
 
 .c1 {
 	padding: 0 25px 3px;
+	height: 88px;
 }
 
 .m_profile_h .lc {
@@ -772,13 +773,21 @@ color: #006a92;
 	width: 179px;
 	min-height: 88px;
 }
+.tit{
+	height: 19px;
+	line-height: 19px;
+}
 .m_profile_h .text_user {
 	font-weight: normal;
+	font-size: 14px;
+	display: block;
+	float: left;
 }
 
 .ico_level {
 	width: 37px;
-	display: inline-block;
+	display: block;
+	float: left;
 	background: url(images/b1_20140716.png) no-repeat;
 	background-position: -54px -126px;
 }
@@ -807,13 +816,206 @@ background-position: -80px -118px;
 }
 
  .c2 {
- 	float: right;
+ 	margin-top: 5px;
 	height: 49px;
-	
-}
+	background: #B6DFEF;
 
+}
+.m_profile_h .list .stat {
+	height: 40px;
+	padding-top: 9px;
+	
+	display: inline-block;
+	text-align: left;
+}
+.m_profile_h .list .text_count {
+	display: block;
+	height: 16px;
+	line-height: 16px;
+	font-size: 16px;
+	font-weight: 500;
+	font-family: Arial;
+}
+.m_profile_h .list .text_atr {
+	display: block;
+}
+.list li{
+	float: left;
+}
 .m_profile_h .list .item_prose {
 	min-width: 58px;
 	padding: 0 0 0 25px;
 	text-align: left;
+
+}
+.line_bor{
+	padding-top: 10px;
+}
+.foFun {
+	display: block;
+	padding: 0;
+	margin: 0;
+	height: 29px;
+	width: 1px;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+	filter: alpha(Opacity=50);
+	opacity: 0.5;
+	background: #89B4CA;
+	
+}
+.m_profile_h .list .item_favorite {
+	min-width: 70px;
+}
+.m_profile_h .list .item_follow {
+	min-width: 76px;
+}
+.m_profile_h .list .item_fans {
+	min-width: 80px;
+}
+.m_profile_h .list .list_item {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+}
+#medal_for_apollo{
+	width: 319px;
+	height: 50px;
+	border-bottom: 1px solid #A3E0F5;
+}
+.m_profile_h .c3 {
+	padding: 10px 0 8px;
+}
+.m_profile_h .c3 .badgeBox {
+	padding-left: 25px;
+	font-size: 0;
+	height: 32px;
+}
+.ico_badge {
+	
+	position: relative;
+	display: block;
+	float: left;
+	width: 22px;
+	height: 22px;
+	padding: 2px 3px 3px 2px;
+	margin: 0 8px 3px 0;
+	overflow: hidden;
+	vertical-align: middle;
+	visibility: visible;
+	background-image: url(images/b6_130415.png);
+	background-repeat: no-repeat;
+}
+.ico_badge img {
+	width: 22px;
+	height: 22px;
+}
+ .ico_badge_more .text {
+	display: block;
+	width: 100%;
+	height: 100%;
+	font: bold 12px/18px Georgia,Tahoma,Arial;
+	text-align: center;
+	cursor: pointer;
+	color: #b6b6b6;
+}
+.m_profile_h .medal_arr {
+	position: absolute;
+	margin: 0 0 -14px 143px;
+	width: 31px;
+	height: 13px;
+	overflow: hidden;
+	z-index: 99;
+}
+.m_profile_h .medal_arr a {
+display: block;
+width: 100%;
+height: 100%;
+background-image: url(images/xz_arr_b_130704.png);
+background-repeat: no-repeat;
+}
+.m_profile_h .medal_arr a:hover{
+	background-position: 0 -15px;
+}
+
+.widgetWrap{
+	overflow: hidden;
+	width: 319px;
+}
+#app_photoVote{
+	overflow: hidden;
+	width: 100%;
+	padding-top: 12px;
+}
+
+
+.sc_fb_hd {
+	padding-right: 15px;
+}
+.sc_fb_hd img {
+	display: none !important;
+}
+.mobileBox {
+	width: 260px;
+	padding: 3px 10px 5px;
+	border: 1px solid #A8E4FA;
+	background: #E7F9FF;
+	margin: auto;
+}
+.sc_fb_pn {
+	padding: 10px 0 5px 15px;
+}
+
+.sc_fb_bd {
+	padding-top: 10px;
+	margin-bottom: 8px;
+	width: 260px;
+	overflow: hidden;
+}
+.tl_picVote_lst {
+	width: 260px;
+	overflow: hidden;
+}
+.tl_picVote_item {
+	width: 127px;
+	height: 123px;
+	float: left;
+	position: relative;
+}
+.tl_picVote_item .pic img {
+	width: 112px;
+	height: 108px;
+}
+.ui_c{
+	width: 40px;
+	height:40px;
+	cursor: pointer;
+	border-radius: 40px;
+	background-color: #333;
+	position: absolute;
+	left: 5px;
+	bottom: 16px;
+	z-index: 10;
+	opacity: 0.6;
+	background-image: url(images/ui_c_a_bor.png);
+}
+.ui_c:hover{
+	background-color: blue;
+}
+
+.ic_ok {
+	width: 16px;
+	height: 16px;
+	margin-right: 3px;
+	display: block;
+	float: left;
+	background: url(images/b1_20140716.png) no-repeat;
+	background-position: -149px -265px;
+}
+.picVotebottom{
+	margin-left: -15px;
+	padding-left: 15px;
+	border: 0;
+	border-top: 1px solid #A8E4FA;
 }
