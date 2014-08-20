@@ -22,7 +22,11 @@ input,textarea{
 	font-size: 0;
 	line-height: 0;
 }
-
+.positionabosulte{
+	right: 0;
+	top: 8px;
+	position: absolute;
+}
 .w_head_outer{
 	z-index: 500;
 	position: fixed; 
@@ -62,6 +66,7 @@ input,textarea{
 	height: 35px;
 	line-height: 35px;
 	margin-right: 1px;
+	position: relative;
 }
 .active{
 	background-color: #006a92;
@@ -69,7 +74,7 @@ input,textarea{
 .topNavItem:hover{
 	background-color: #006a92;
 }
-.topNavItem a{
+.topNavItem >a{
 	padding-top:11px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -77,12 +82,101 @@ input,textarea{
 	color: #fefefe;
 	font-size: 12px;
 	text-decoration: none;
+	position: relative;
+	display: block;
+	float: left;
+	line-height: 12px;
+}
+
+.application{
+	width: 580px;
+	background: #fefefe;
+	box-shadow: 2px 1px 5px;
+	position: absolute;
+	top: 36px;
+	left: -200px;
+	overflow: hidden;
+	display: none;
+}
+.applicationLeft{
+	float: left;
+	width: 375px;
+	padding: 10px 10px 10px 17px;
+}
+.applicationRight{
+	float: left;
+	border-left: 1px solid #EDECEA;
+	background: #FAFAFD;
+	width: 145px;
+	padding: 35px 10px 12px 15px;
+	height: 197px;
+}
+.applist{
+	overflow: hidden;
+}
+.applist_item{
+	float: left;
+	width: 75px;
+	height: 85px;
+	overflow: hidden;
+	text-align: center;
+
+}
+.applistitmePic{
+	height: 50px;
+	display: block;
+
+}
+.applistitmePic img{
+	width: 50px;
+	height: 50px;
+	border-radius: 5px;
+}
+.appName{
+	height: 18px;
+	display: block;
+	line-height: 18px;
+}
+
+.apprightAd{
+	height: 100%;
+	width: 100%;
+}
+
+.actList{
+	width: 100%;
+	overflow: hidden;
+}
+.floatLeft{
+	display: block;
+	float: left;
+}
+.actListItem{
+	overflow: hidden;
+}
+.actListItem img{
+	width: 30px;
+height: 30px;
+border-radius: 5px;
+}
+.actlistItemdtitle{
+	padding-left: 5px;
+	line-height: 14px;
+	height: 14px;
+}
+.actlistItemdesc{
+	padding-left: 5px;
+	line-height: 14px;
+	height: 14px;
 }
 .ico_hot_mini {
-	display: inline-block;
+	display:block;
+	
 	width: 9px;
 	height: 9px;
+	float: left;
 	margin-top: 9px;
+	margin-left: -5px;
 	vertical-align: top;
 	background: url(images/b2_20131129.png) no-repeat;
 	background-position: -202px -176px;
@@ -103,6 +197,30 @@ input,textarea{
 	float: left;
 	padding-top: 7px;
 }
+.topNavSub {
+	position: absolute;
+	top: 36px;
+	min-width: 110px;
+	background-color: #1084b2;
+}
+.topNavSub a {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	padding-left:10px; 
+	color: #D0ECF7;
+}
+.topNavSub li {
+	white-space: nowrap;
+	width: 100%;
+	overflow: hidden;
+}
+.topNavSub li:hover{
+	background:#090909;
+	opacity:0.3;
+}
+
+
 
 .t{
 	display: block;
@@ -452,6 +570,7 @@ position: relative;
 .ui_tab_lst .unit{
 	float: left;
 	height: 30px;
+	overflow: hidden;
 }
 .ui_tab_lst .unit:hover{
 	border-bottom:3px solid #ccc;
@@ -1019,3 +1138,123 @@ background-repeat: no-repeat;
 	border: 0;
 	border-top: 1px solid #A8E4FA;
 }
+
+#app_recStars{
+	margin-top: 15px;
+}
+.SC_type_larger {
+	
+	padding-top: 12px;
+	position: relative;
+}
+.SC{
+	padding-top: 20px;
+	border-top: 1px solid #A3E0F5;
+
+}
+.SC_hd {
+	padding-left: 25px;
+	padding-right: 25px;
+	margin-bottom: 10px;
+	position: relative;	
+}
+.SC_hd .tit {
+	height: 16px;
+	line-height: 16px;
+	font-size: 14px;
+	height: 20px;
+	vertical-align: top;
+	overflow: hidden;
+	font-weight: normal;
+
+}
+h2{
+	font-weight: normal;
+}
+
+.SC_hd .refresh_tx {
+position: absolute;
+top: 0px;
+right: 25px;
+}
+.SC_bd{
+	width: 100%;
+	overflow: hidden;
+}
+.sc_cnt_rmdfollow{
+	overflow: hidden;
+	padding: 0 25px;
+
+}
+.m_lst{
+	width: 269px;
+	overflow: hidden;
+}
+.c_1{width: 60px;height: 52px;float: left;}
+.BossHref img{
+	width: 50px;
+	height: 50px;
+}
+
+.c_2{width: 208px;height: 52px; float: right;}
+.desc{height: 12px; line-height: 12px;}
+.displayblock{
+	display: block;
+}
+
+.m_lst_space{
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+.shoutingbtn{
+
+	width:32px;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+	background-color:#89B4CA; 
+	cursor: pointer;
+	padding-bottom: 1px;
+	padding-left: 4px;
+	padding-right: 4px; 
+	margin-right: 2px; 
+	margin-top: 2px;
+}
+.SC_more{
+	padding: 0 25px;
+}
+.SC_type_larger {
+	padding-top: 12px;
+	margin-bottom: 0;
+	border-top-width: 0;
+	position: relative;
+}
+.SC_hd{
+	padding-top: 10px;
+}
+.sc_cnt_hotopic {
+	padding: 0 25px;
+	overflow: hidden;
+}
+
+.sc_topic_lst .larger_c .tit {
+	vertical-align: top;
+	line-height: 16px;
+	margin-bottom: 5px;
+}
+
+.folatright{
+	display: block;
+	float: right;
+}
+.sc_topic_lst .larger_c {
+padding-bottom: 10px;
+}
+
+.sc_topic_lst .mini_c {
+
+	vertical-align: top;
+	height: 23px;
+	line-height: 23px;
+}
+.clearmargin{margin: 0;}

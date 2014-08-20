@@ -1,4 +1,17 @@
 $(function(){
+
+	
+
+		$(".applic").hover(
+			function(){
+				
+				$(".application").show();
+			},
+			function(){
+				$(".application").hide();
+			}
+		);
+	
 	$(document).scroll(function(){
 		if($(this).scrollTop()>=325){
 			//alert(123);
@@ -8,4 +21,7 @@ $(function(){
 			$(".AL ").removeClass("ui_tab_fixed");
 		}
 	});
+
+
+
 });
