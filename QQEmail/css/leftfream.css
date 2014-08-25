@@ -1,0 +1,90 @@
+*{margin: 0;padding: 0}
+ul,li{list-style: none;}
+img{border: 0;}
+body{
+	font-size: 12px;
+	
+	font-family: "lucida Grande",Verdana;
+	overflow: hidden;
+}
+a{ text-decoration: none; cursor: pointer; color: #1E5494;}
+.leftControlArea {
+	background: #fefefe;
+	border-left: 6px solid #89B5E9;
+	border-right: 6px solid #89B5E9;
+	margin-left: 8px;
+	width: 168px;
+	height: 450px;
+	position: relative;
+}
+#navBarDiv{
+	width: 178px;
+	height: 107px;
+	margin-left:-6px;
+	background: url(images/nav_bg16a498.gif) no-repeat;
+}
+
+.composepart {
+	margin: 0 10px 0 11px;
+	padding: 2px 0 0 0;
+	height: 26px;
+}
+.checkpart {
+margin: 6px 10px 0 11px;
+}
+.addrpart {
+margin: 6px 10px 0 11px;
+}
+.fs{
+	line-height: 24px;
+	font-weight: bold;
+}
+.fs a {
+	color: blue;
+	padding-left: 41px;
+
+}
+
+#navMidBar{
+	height: 100%;
+	overflow: auto;
+}
+
+
+.SysFolderListul{
+	width: 90%;
+	margin: auto;
+}
+
+
+.SysFolderListItem{
+	margin-left: 10px;
+	line-height: 22px;
+	height: 22px;
+	margin:auto;
+}
+.SysFolderListItem:hover{
+	background: #EFF5FB;
+}
+.SysFolderListItem a{
+	padding-left: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+#navBottomId{
+	width: 179px;
+	height: 13px;
+	margin-left: -6px;
+	background: url(images/topline16a498.gif) -184px -11px no-repeat;
+	position: absolute;
+	bottom: 0;
+
+}

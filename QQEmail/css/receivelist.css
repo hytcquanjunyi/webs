@@ -1,0 +1,59 @@
+*{margin: 0; padding: 0}
+ul,li{
+	list-style: none;
+}
+img{border: 0;}
+body{
+	font-size: 12px;
+	font-family: "lucida Grande",Verdana;
+}
+a{	
+	text-decoration: none;
+	 cursor: pointer; 
+	 color: #1E5494;
+}
+
+.mailcontainer{
+	
+	height: 300px;
+	padding-top: 20px;
+	padding-left: 10px;
+}
+.txt_title{
+	color:#1E5494;
+}
+.txt_title strong{
+	font-size: 14px;
+}
+.toolArea{
+	padding: 7px;
+	background-color: #C1D9F3;
+	border-bottom: 1px solid #AAC1DE;
+}
+
+
+
+
+.btn_space {
+margin-right: 3px;
+}
+
+
+.btn_gray {
+	border: 1px solid #888;
+	color: black;
+	color: black!important;
+	background: #F3F3F3;
+	display: inline-block;
+	height: 22px;
+	min-width: 24px;
+	line-height: 22px;
+	font-family: Simsun	9;
+	padding: 0 12px;
+	margin: 0;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: default;
+	border-radius: 3px;
+}

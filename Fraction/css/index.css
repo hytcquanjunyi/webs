@@ -14,6 +14,11 @@ color: inherit;
 text-decoration: none!important;
 }
 
+.fixed{
+	position: fixed;
+	z-index: 999;
+	left: 0px;
+}
 
 .left{
 	display: block;
@@ -34,13 +39,15 @@ text-decoration: none!important;
 	margin: auto;
 	background: #fefefe;
 	background: rgba(255,255,255,0.95);
-	box-shadow: 0 0px 10px rgba(0,0,0,0.2)
+	box-shadow: 0 0px 10px rgba(0,0,0,0.2);
+	position: relative;
 }
 .header{
 	width: 100%;
 	height: auto;
 	padding:20px 0 0 0;
 	margin: 0 0 40px 0;
+	
 }
 .wrapper {
 	width: 1190px;
@@ -182,6 +189,7 @@ text-decoration: none!important;
 	vertical-align: middle;
 }
 
+
 #searchbtn{
 	width: 86px;
 	height: 72px;
@@ -256,6 +264,57 @@ text-decoration: none!important;
 	position: relative;
 	width: 100%;
 }
+.prevPic{
+	width: 30px;
+	height: 30px;
+	background-color: red;
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	left: 10px;
+	z-index: 5;
+}
+
+.prev{
+	width: 30px;
+	height: 30px;
+	background-color: blue;
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	left: 10px;
+	z-index: 5;
+}
+.nextPic{
+	width: 30px;
+	height: 30px;
+	background-color: red;
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	right: 10px;
+	z-index: 5;
+}
+
+.next{
+	width: 30px;
+	height: 30px;
+	background-color: blue;
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	right: 10px;
+	z-index: 5;
+}
+
 .slideContainer{
 	width: 1000%;
 	overflow: hidden;
@@ -761,6 +820,7 @@ ins {
 
 
 
+
  .feature-text {
 	display: block;
 	position: absolute;
@@ -802,7 +862,7 @@ ins {
 	top: -35px;
 	
 }
- .home-featured-menu a {
+ .control {
 	display: inline-block;
 	width: 12px;
 	height: 12px;
@@ -818,8 +878,9 @@ ins {
 	margin-left: 2px;
 	margin-right: 2px;
 }
-.home-featured-menu a:hover{
-	background: #fff;
+
+.selected{
+	background-color: #fff;
 }
 
 .article-content{
@@ -875,12 +936,20 @@ ins {
 	color: #3c98ca;
 }
 
+
+
+
 .accordionItemContent {
 	width: auto;
 	height: auto;
 	padding: 15px;
 	border-top: 1px dotted #cccccc;
 	margin-top: 15px;
+	display: none;
+}
+
+.accordionItemContentshow{
+	display: block;
 }
 
 .accordionItemContent p{
@@ -965,6 +1034,7 @@ text-transform: uppercase;
 .gallery{
 	padding: 25px 0;
 	border-bottom: 1px dotted #ccc;
+	position: relative;
 }
 
 .galleryitem{

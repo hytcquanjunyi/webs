@@ -1,0 +1,137 @@
+*{margin: 0;padding: 0;}
+ul,li{
+	list-style: none;
+}
+img{
+	border: 0;
+}
+body{
+	font-size: 12px;
+	font-family: "lucida Grande",Verdana;
+}
+a{text-decoration: none; cursor: pointer; color: #1E5494; }
+
+#todayMain{
+	padding-left: 8px;
+}
+.updateInfo {
+	padding: 13px 0 0 2px;
+}
+
+.greeting{
+	font-size: 18px;
+}
+.level{
+	margin-top: 4px;
+	margin-bottom: 4px
+}
+.level a{
+	font-size: 14px;
+	font-weight: bold;
+}
+.level span{
+	font-weight: bold;
+}
+.addrtitle {
+color: #798699;
+}
+
+.ico_reads {
+	background: url(images/mail1d47c7.png) -48px -16px no-repeat;
+	margin: 0 6px 1px 0;
+	display: block;
+	width: 16px;
+	height: 16px;
+	margin-right: 10px;
+	float: left;
+}
+.totalmail{
+	overflow: hidden;
+}
+
+.unreadmailcount{
+	float: left;
+}
+
+.mailinfo1 {
+	padding: 8px 0 0 25px;
+	overflow: hidden;
+	zoom: 1;
+	line-height: 22px;
+	font-size: 14px;
+	font-weight: bold;
+	width: auto;
+	border-bottom: 1px solid white;
+}
+
+#todayMain2{
+	margin-top:30px; 
+	padding-left: 8px;
+}
+
+#TodayPartNoticeLeft{
+	width:743px;
+	height: 232px;
+}
+
+.tipstitle{
+	padding-top: 5px;
+	border: 1px solid #A7C5E2;
+	height: 23px;
+	padding-left:15px;
+	background-color: #EFF5FB;
+}
+.tipsbannerContainer{
+	border: 1px solid #A7C5E2;
+	border-top: 0;
+}
+.tipsbanner{
+	overflow: hidden;
+	display: block;
+	background: url(images/20140618_ipadmail_002.png) repeat-x;
+}
+.today_linkPanel{
+	padding-top: 30px;
+	padding-bottom:20px; 
+	border: 1px solid #A7C5E2;
+	border-top: 0;
+	overflow: hidden;
+}
+.today_linkPanel .today_linkItem {
+	width: 50%;
+	padding: 3px 0;
+	float: left;
+}
+.today_itemDiv{
+	padding: 4px 0 0 25px;
+	font-size: 14px;
+	line-height: 22px;
+	overflow: hidden;
+}
+.today_linkIcons{
+	width: 24px;
+	height: 24px;
+	float: left;
+	margin-right: 1px;
+	background: url(images/newicon_today_blue1e54d6.png) no-repeat;
+}
+.today_link_1{
+	background-position: 1px 0px;
+}
+
+.today_link_2{
+	background-position: 0 -31px;
+}
+.today_link_3{
+	background-position: 0 -61px;
+}
+.today_link_4{
+	background-position: 0 -93px;
+}
+.today_link_5{
+	background-position: 0 -125px;
+}
+.today_link_6{
+	background-position: 0 -158px;	
+}
+
