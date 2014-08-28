@@ -5,6 +5,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="css/receivelist.css">
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/receivelist.js"></script>
 </head>
 <body>
 	<div class="mailcontainer" id="qqmail_mailcontainer" >
@@ -20,9 +22,144 @@
 					<a class="btn_gray btn_space">转发</a>
 					<a class="btn_gray btn_space">举报</a>
 					<a class="btn_gray btn_space">全部标记已读</a>
+					<a class="btn_gray btn_space biaojibtn">标记为...
+						<ul class="biaojiwei">
+							<li href="" class="biaojiItem"> 已读邮件</li>
+							<li href="" class="biaojiItem"> 未读邮件</li>
+							<li href="" class="biaojiItem"> 星标邮件</li>
+							<li href="" class="biaojiItem"> 取消星标</li>
+							<li href="" class="biaojiItem"> 新建标签</li>
+						</ul>
+					</a>
+					<a class="btn_gray btn_space yidongbtn">移动到...
+						<ul class="yidongdao">
+							<li href="" class="yidongdaoItem"> 收件箱</li>
+							<li href="" class="yidongdaoItem"> 已发送</li>
+							<li href="" class="yidongdaoItem"> QQ邮箱订阅</li>
+							<li href="" class="yidongdaoItem"> 新建文件夹</li>
+						</ul>
+					</a>
+				</div>
+				<div class="clear-float"></div>
+			</div>
+			<div class="maillist">
+				<div class="mailistheader">
+					<div class="allcheck left">
+						<input type="checkbox" 	>
+					</div>
+					<div class="left space1"></div>
+					<div class="left">
+						<input type="button" class="icon_mail" />
+					</div>
+					<div class="o_title2 left "style="width:135px;*width:134px;">
+						<a href=""> 发件人</a>
+					</div>
+					<div class="o_title2 left "style="width:704px;*width:703px;">
+						<a href=""> 主题</a>
+					</div>
+					<div class="o_title2 left "style="width:100px;*width:99px;">
+						<a href=""> 时间</a>
+					</div>
+				</div>
+				<div class="todaymail">
+					<div class="todaymailheader"><a href=""><b>今天</b>(2封)</a></div>
+					<div class="todaymaillist">
+						<div class="maillistItem">
+							<div class="check left"><input type="checkbox" class="checkbox" /></div>
+							<div class="ci left">
+								<div class="ciz"></div>
+								<div class="cir Ru" title="读信"></div>
+								<div class="cij" title="附件"></div>
+							</div>							
+							<div class="maildetail">
+								<a href="" class="maildetaillink">
+									<div class="mailsender">
+										<strong>valued Opinions</strong>
+									</div>
+									<div class="mailtitle">
+										<strong>新调查奖励</strong>
+										<span> &nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;峻佚&nbsp;你好,&nbsp;&nbsp;我们为您准备了一个新的调查。假如您符合调查对象要求并完成问卷，您将会得到CNY3</span>>
+									</div>
+									<div class="mailsendtime">
+										昨天 20:57
+									</div>
+								</a>
+								<div class="fg" title="标记星">
+									
+								</div>
+							</div>
+						</div>
+						<div class="maillistItem">
+							<div class="check left"><input type="checkbox" class="checkbox" /></div>
+							<div class="ci left">
+								<div class="ciz"></div>
+								<div class="cir Rr" title="读信"></div>
+								<div class="cij" title="附件"></div>
+							</div>							
+							<div class="maildetail">
+								<a href="" class="maildetaillink">
+									<div class="mailsender">
+										<strong>valued Opinions</strong>
+									</div>
+									<div class="mailtitle">
+										<strong>新调查奖励</strong>
+										<span> &nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;峻佚&nbsp;你好,&nbsp;&nbsp;我们为您准备了一个新的调查。假如您符合调查对象要求并完成问卷，您将会得到CNY3</span>>
+									</div>
+									<div class="mailsendtime">
+										昨天 20:57
+									</div>
+								</a>
+								<div class="fg" title="标记星">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				
+				</div>
+				<div class="prevmail">
+					<div class="prevmailheader">
+						<a href=""><b>更早</b>(1封)</a>
+					</div>
+					<div class="prevmaillist">
+						<div class="maillistItem">
+							<div class="check left"><input type="checkbox" class="checkbox" /></div>
+							<div class="ci left">
+								<div class="ciz"></div>
+								<div class="cir Rr" title="读信"></div>
+								<div class="cij" title="附件"></div>
+							</div>							
+							<div class="maildetail">
+								<a href="" class="maildetaillink">
+									<div class="mailsender">
+										<strong>valued Opinions</strong>
+									</div>
+									<div class="mailtitle">
+										<strong>新调查奖励</strong>
+										<span> &nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;峻佚&nbsp;你好,&nbsp;&nbsp;我们为您准备了一个新的调查。假如您符合调查对象要求并完成问卷，您将会得到CNY3</span>>
+									</div>
+									<div class="mailsendtime">
+										昨天 20:57
+									</div>
+								</a>
+								<div class="fg" title="标记星">	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="toolArea">
+				<div class="left">
+					<a class="btn_gray btn_space">删除</a>
+					<a class="btn_gray btn_space">彻底删除</a>
+					<a class="btn_gray btn_space">转发</a>
+					<a class="btn_gray btn_space">举报</a>
+					<a class="btn_gray btn_space">全部标记已读</a>
 					<a class="btn_gray btn_space">标记为...</a>
 					<a class="btn_gray btn_space">移动到...</a>
 				</div>
+				<div class="clear-float"></div>
 			</div>
 		</div>
 	</div>

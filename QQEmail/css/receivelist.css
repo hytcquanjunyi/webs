@@ -13,6 +13,15 @@ a{
 	 color: #1E5494;
 }
 
+.clear-float{
+	clear: both;
+}
+
+.left{
+display: block;
+float: left;
+
+}
 .mailcontainer{
 	
 	height: 300px;
@@ -29,6 +38,7 @@ a{
 	padding: 7px;
 	background-color: #C1D9F3;
 	border-bottom: 1px solid #AAC1DE;
+
 }
 
 
@@ -56,4 +66,162 @@ margin-right: 3px;
 	vertical-align: middle;
 	cursor: default;
 	border-radius: 3px;
+	position: relative;
+}
+
+.mailistheader{
+	width: auto;
+	height: 22px;
+	line-height: 22px;
+	overflow: hidden;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+.allcheck{
+	padding: 0px 0px 0px 5px;
+	width: 27px;
+}
+
+.space1{
+	width: 6px;
+	height: 22px;
+	background: url(images/mail1d47c7.png) -128px 0 repeat-y;
+}
+
+.icon_mail{
+	border: none;
+	padding: 0;
+	margin: 0;
+	background: url(images/mail1d47c7.png) 1px -82px no-repeat;
+	width: 26px;
+	height: 16px;
+	margin-top: 1px;
+	margin-right: 3px;
+}
+
+.o_title2 {
+	background: url(images/mail1d47c7.png) -128px 0 repeat-y;
+	margin: 0;
+	padding: 0 0 0 12px;
+}
+.o_title2 a{
+	font-size: 12px;
+	color: #000;
+}
+
+.todaymailheader,.prevmailheader{
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+	clear: both;
+	border-left: none;
+	border-right: none;
+	padding: 8px 0px 3px 9px;
+	border-bottom: 2px solid #A7C5E2;
+	border-top: none;
+	height: 17px;
+}
+.todaymaillist,.prevmaillist{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+
+}
+.maillistItem{
+	margin-left: 5px;
+	margin-top: 3px;
+	height: 19px;
+	border-bottom:1px solid #ccc;
+	overflow: hidden;
+}
+.checkbox{
+	margin: 3px;
+}
+.ci{
+	width: 50px;
+	padding-top: 2px;
+}
+
+.ciz{
+	width: 9px;
+	height: 16px;
+	margin-top: 2px;
+	float: left;
+}
+.cir{
+	width: 18px;
+	height: 16px;
+	overflow: hidden;
+	cursor: pointer;
+	float: left;
+}
+.Rr {
+	background: url(images/mail1d47c7.png) -48px -16px no-repeat;
+}
+
+.Ru {
+	background: url(images/mail1d47c7.png) -48px 0 no-repeat;
+}
+
+.cij{
+	width: 12px;
+	height: 12px;
+	overflow: hidden;
+	margin-top: 3px;
+	float: left;
+}
+
+.maildetail{
+	height: 18px;
+	padding-top: 2px;
+	width: auto;
+	overflow: hidden;
+}
+.mailsender{
+	width: 117px;
+	padding-left: 1px;
+	padding-right: 12px;
+	float: left;
+
+}
+.mailtitle{
+	margin-left: 18px;
+	float: left;
+	width: 716px;
+}
+.mailsendtime{
+	float: left;
+
+}
+
+.fg {
+float: left;
+margin-left: 20px;
+width: 14px;
+height: 14px;
+background: url(images/mail1d47c7.png) no-repeat -32px -160px;
+}
+
+.maildetaillink{
+	color: #1e1e1e;
+}
+
+.biaojiwei,.yidongdao{
+	width: 70px;
+	height: auto;
+	position: absolute;
+	left: 0;
+	top: 20px;
+	background: #fefefe;
+	border: 1px solid #ccc;
+	z-index: 30px;
+	display: none;
+}
+.biaojiItem,.yidongdaoItem{
+	display: block;
+	height: 20px;
+
+}
+.biaojiItem:hover,.yidongdaoItem:hover{
+	background: #ccc;
 }
