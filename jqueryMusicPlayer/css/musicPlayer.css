@@ -1,0 +1,61 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul,li{
+	list-style: none;
+}
+
+.controlArea{
+	width: 1000px;
+	margin: auto;
+	line-height: 32px;
+	overflow: hidden;
+}
+.playpause{
+	width: 50px;
+	float: left;
+}
+.stop{
+	width: 70px;
+	float: left;
+}
+.backwardforward{
+	width: 100px;
+	float: left;
+}
+.volume{
+	width: 15px;
+	float: left;
+}
+.jp-volume-off{
+	display: none;
+}
+
+.changevolume{
+	margin-top: 13px;
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 50px;
+	float: left;
+}
+#slider-range-min a{
+	top: -3px;
+	margin-left: 0;
+	height: 8px;
+	width: 2px;
+}
+
+.progress{
+	float: left;
+	width: 400px;
+	height:20px;
+	margin-right: 10px;
+	margin-top: 11px;
+}
+#progressbar a{
+	top: -2px;
+	margin-left: -1px;
+	height: 10px;
+	width: 3px;
+}

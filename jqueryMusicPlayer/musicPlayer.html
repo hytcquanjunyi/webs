@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<title>MusicPlayer</title>
+
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome-ie7.min.css">	
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.min.css">
+	<link rel="stylesheet" type="text/css" href="css/musicPlayer.css">
+	<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery.jplayer.min.js">
+	</script>
+	<script type="text/javascript" src="js/musicPlayer.js"></script>
+	<!--
+	<script type="text/javascript">
+		 $(function(){
+		  $("#jquery_jplayer_1").jPlayer({
+		   ready: function () {
+		    $(this).jPlayer("setMedia", {
+		     mp3: "././songs/1.mp3"
+		    
+		    });
+		   },
+		   swfPath: "js",
+		   supplied: "mp3"
+		  });
+		 });
+	</script>
+	-->
+	
+</head>
+<body>
+	<div id="jquery_jplayer_1"></div>
+	<div class="controlArea">
+		<div class="playpause">
+			<div id="jp_container_1">
+				 <a href="#" class="jp-play"><i class="fa fa-play fa-2x"></i></a>
+				 <a href="#" class="jp-pause"><i class="fa fa-pause fa-2x"></i></a>
+			</div>
+		</div>
+		<div class="stop">
+			<a href="#" class="jp-stop"><i class="fa fa-stop fa-2x"></i></a> 
+		</div>
+		<div class="backwardforward">
+			<a href="" ><i class="fa fa-backward fa-2x"></i></a>	
+			
+			<a href=""><i class="fa fa-forward fa-2x"></i></a>
+		</div>
+		<div class="progress">
+			<div id="progressbar"></div>
+		</div>
+		<div class="volume">
+			<a href="#" class="jp-volume" flag=1><i class="fa fa-volume-down"></i></a>			
+		</div>
+		<div class="changevolume">
+			<div id="slider-range-min"></div>
+		</div>
+		<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+		
+		
+	</div>
+</body>
+</html>
