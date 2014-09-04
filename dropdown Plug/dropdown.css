@@ -1,0 +1,15 @@
+*{margin: 0; padding: 0;}
+.ddl{margin: 100px auto;}
+.xlall{border:1px solid #bbb; cursor: pointer; padding: 1px; position: relative; z-index: 9999;}
+.xlall h3{ border: 1px solid #ccc; height: 40px; line-height: 40px; color: #444; text-align: center; font-size: 12px; font-family: "Microsoft Yahei";}
+.xlall ul{display: none;}
+.xlall ul li
+{
+	list-style: none; height: 20px; font-size: 12px; color: #666;
+	text-align: center; line-height: 20px; padding: 10px 0 10px 0;
+	font-family: "Microsoft Yahei";
+}
+.xlall ul li:hover{
+	background-color: #9a9a9a;
+	color: #ffffff;
+}
