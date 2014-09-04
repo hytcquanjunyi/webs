@@ -1,0 +1,19 @@
+.plugdiv{
+	border:1px solid #ccc;
+	position: relative;
+	z-index: 100;
+}
+.plugul{
+	position: absolute;
+	left: -1px;
+	display: none;
+	border: 1px solid #ccc;
+}
+.plugli{
+	list-style: none;
+	cursor: pointer;
+
+}
+.plugli:hover{
+	background: #efefef;
+}
