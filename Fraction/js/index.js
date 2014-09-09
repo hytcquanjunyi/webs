@@ -3,7 +3,7 @@ $(function(){
 
 	//var scrollTop = document.documentElement.scrollTop() || window.pageYOffset || document.body.scrollTop();
 	
-	$(document).scroll(function(){
+	$("html,body").scroll(function(){
 	 	if($(document).scrollTop()>=150){
 	 		$(".header").css("padding","0");
 	 		$(".header").addClass("fixed");
@@ -15,6 +15,16 @@ $(function(){
 
 
 	 	//$(".side-fixed").offset({"top":});
+	});
+	$(document).scroll(function(){
+		if($(document).scrollTop()>=150){
+	 		$(".header").css("padding","0");
+	 		$(".header").addClass("fixed");
+	 	}
+	 	else{
+	 		$(".header").css("padding","");
+	 		$(".header").removeClass("fixed");
+	 	}
 	});
 
 	/*******搜索条**********/
