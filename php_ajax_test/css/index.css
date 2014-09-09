@@ -1,0 +1,17 @@
+#sendbtn{
+	width: 100px;
+	height: 10px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	padding: 10px 10px;
+	line-height: 10px;
+}
+
+#updateprofilebtn{
+	width: 100px;
+	height: 10px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	padding: 10px 10px;
+	line-height: 10px;
+}
