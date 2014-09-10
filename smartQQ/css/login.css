@@ -1,0 +1,144 @@
+*{margin: 0;padding: 0;font-family: '微软雅黑','Helvetica Neue',Helvetica,Arial,sans-serif;}
+li,ul{
+	list-style: none;
+}
+img{
+	border: 0;
+}
+body{
+	background: #f6f6f6;
+}
+input{outline: none;}
+#mq_login_title {
+	position: relative;
+	margin: 62px auto 40px;
+	text-align: center;
+	font-size: 30px;
+	width: 500px;
+	font-weight: bold;
+}
+
+.signin{
+	margin: 0 auto;
+	width: 700px;
+	height: 300px;
+}
+
+.qrlogin{
+	width: 340px;
+	height: 297px;
+	float: left;
+	text-align: center;
+}
+
+.signin_sep {
+	float: left;
+	width: 1px;
+	margin: 0 5px;
+	height: 345px;
+	position: relative;
+}
+
+.signin_sep_line {
+	background: #E6E6E6;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.signin_sep_text {
+	background: #F6F6F6;
+	font-size:12px; 
+	color: #b8b8b8;
+	position: absolute;
+	top: 40%;
+	padding: 3px 0;
+	width: 40px;
+	display: block;
+	left: -20px;
+	text-align: center;
+}
+.signin-area {
+	float: left;
+	width: 240px;
+	margin: 0 0 0 50px;
+	padding: 1px 17px;
+	height: 309px;
+	/* text-align: center; */
+}
+
+.qr_title_text {
+	/* text-indent: -9999px; */
+	/* background: url("/style.ssl/16/images/safe_title.png") no-repeat; */
+	width: 200px;
+	margin:0 auto 15px auto;
+	display: inline-block;
+	height: 40px;
+
+	font-size: 18px;
+	color: rgb(131,131,131);
+	font-weight: 100;
+	text-align: center;
+}
+
+#qrlogin_step1 {
+	position: relative;
+	width: 184px;
+	height: 184px;
+	margin: 0 auto;
+	border: 1px solid rgb(139,141,144);
+}
+.input_login_text{
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	color: rgb(131,131,131);
+	font-weight: 100;
+	margin-bottom: 30px;
+}
+
+.sigh-input{
+	width: 296px;
+
+}
+
+.inputuserid{
+	width: 240px;
+	height: 28px;
+	padding:2px 2px 2px 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #868686;
+	font-size: 16px;
+}
+
+.inputuserpwd{
+	width: 240px;
+	height: 28px;
+	padding:2px 2px 2px 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #868686;
+	font-size: 16px;
+	margin-top: 18px;
+}
+.signinbtnArea{
+	margin-top: 10px;
+}
+#login_button{
+	width: 124px;
+	height: 36px;
+	color: white;
+	font-size: 16px;
+	border:0;
+	cursor: pointer;
+	background: url(images/login_btn.png);
+}
+
+.loginerrorInfo{
+	font-size: 12px;
+	color: #ff0000;
+	margin-bottom: 10px;
+	display: block;
+}
