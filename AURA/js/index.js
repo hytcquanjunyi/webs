@@ -59,6 +59,52 @@ $(function(){
 		$(this).find(".pi-img-darker").hide();
 	});
 
+
+	$(".pright-menuli").hover(function(){
+		$(this).find(".dropdownlist").show();
+	},function(){
+		$(this).find(".dropdownlist").hide();
+	});
+	$(".dropdownlist li").hover(function(){
+		$(this).find(".droplistrightlist").show();		
+	},function(){
+		$(this).find(".droplistrightlist").hide();	
+	});
+
+	$("html,body").scroll(function(){
+		if($(document).scrollTop()>=1500){
+	 		$(".pi-count-bar1").animate({width:"417px"},3000);
+	 		$(".pi-count-bar2").animate({width:"480px"},3000);
+	 		$(".pi-count-bar3").animate({width:"343px"},3000);
+	 		$(".pi-count-bar4").animate({width:"417px"},3000);
+
+	 	}
+	});
+	$(document).scroll(function(){
+		if($(document).scrollTop()>=1500){
+	 		$(".pi-count-bar1").animate({width:"417px"},3000);
+	 		$(".pi-count-bar2").animate({width:"480px"},3000);
+	 		$(".pi-count-bar3").animate({width:"343px"},3000);
+	 		$(".pi-count-bar4").animate({width:"417px"},3000);
+
+	 	}
+	 	
+	});
+
+	$(".pi-img-darker").click(function(){
+		$(".mengban").show();
+		var src=$(this).next("img").attr("src");
+		
+		$(".photo img").attr("src",src);
+		//alert($(".photo img").attr("src"));
+	});
+
+
+	$(".closephotoAlbum").click(function(){
+		$(".mengban").hide();
+	});
+
+
 });
 var index=0;
 var parallaxindex=0;

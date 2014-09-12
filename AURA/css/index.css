@@ -4,6 +4,51 @@ a{ text-decoration: none; cursor: pointer;}
 img{ border: 0;}
 body{font-size: 14px;font-family: 'Open Sans',Arial,sans-serif; line-height: 1.6em;}
 
+.mengban{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 1000;
+	display: none;
+	background: rgba(30,30,30,0.7);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B21E1E1E,endColorstr=#B21E1E1E);/**对IE兼容RGBA颜色的处理**/
+}
+.photoAlbum{
+	background: #fefefe;
+	margin: auto;
+	margin-top: 30px;
+	width: 50%;
+	position: relative;
+	/*border: 8px solid #ccc;*/
+}
+.closephotoAlbum{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: 5px;
+	top: 5px;
+	z-index: 30;
+	font-size: 30px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.photo{
+	width: 100%;
+
+}
+.photo img{
+	max-width: 100%;
+	height: auto;
+}
+
+
+
+
+
+
+
+
 .clear-float{ clear: both;}
 
 .fa-phone-square{
@@ -91,6 +136,7 @@ body{font-size: 14px;font-family: 'Open Sans',Arial,sans-serif; line-height: 1.6
 	border-bottom: 3px solid #0dc0c0;
 }
 .dropdownlist{
+	display: none;
 	background: #21252b;
 	line-height: 20px;
 	position: absolute;
@@ -118,7 +164,7 @@ body{font-size: 14px;font-family: 'Open Sans',Arial,sans-serif; line-height: 1.6
 }
 
 .droplistrightlist{
-
+	display: none;
 	background: #21252b;
 	position: absolute;
 	top: 0;
@@ -439,8 +485,8 @@ body{font-size: 14px;font-family: 'Open Sans',Arial,sans-serif; line-height: 1.6
 	top: 0;
 	left: 0;
 	width: 100%;
-
 	background: rgba(30, 35, 41, 0.7);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B21e2329,endColorstr=#B21e2329);
 }
 .pi-section-parallax-inner{
 	width: 1040px;
@@ -561,7 +607,7 @@ p{
 .maleft{
 	margin-left: 10px;
 }
-.pi-count-bar1{width: 85%; background: #0dc0c0;}
-.pi-count-bar2{width: 98%; background: #0dc0c0;}
-.pi-count-bar3{width: 70%; background: #0dc0c0;}
-.pi-count-bar4{width: 85%; background: #0dc0c0;}
+.pi-count-bar1{width: 35%; background: #0dc0c0; }
+.pi-count-bar2{width: 35%; background: #0dc0c0;}
+.pi-count-bar3{width: 38%; background: #0dc0c0;}
+.pi-count-bar4{width: 35%; background: #0dc0c0;}
