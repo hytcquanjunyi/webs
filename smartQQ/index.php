@@ -18,6 +18,8 @@
 			$_SESSION["myid"]=$userid;
 			$_SESSION["mynickname"]=$res->userNickname;
 			$_SESSION["myheadimg"]=$res->userHeadImage;
+			$sql="update userinfo set userState='online' where concat(id)='".$userid."'";
+			$db->query($sql);
 			echo "success";			
 		}
 	}
@@ -58,6 +60,7 @@
 						
 					</div>
 				</div>
+				<div class="logoutbtn">退出</div>
 			</div>
 			<ul class="friendlistul">
 				<span class="statetitleon">在线好友</span>
@@ -73,19 +76,22 @@
 							foreach ($res as $friend) {
 								$friendheadimg=$friend->userHeadImage;
 								$friendnickname=$friend->userNickname;
+								$friendid=$friend->friendid;
 								if($friend->userState=='online'){
-									$onlinehtml.="<li class='friendlistli'>";
+									$onlinehtml.="<li friendid='$friendid'  friendnickname='$friendnickname' class='friendlistli'>";
 									$onlinehtml.=	"<div class='friendlisthead'> <img src=".$friendheadimg." /></div>";
 									$onlinehtml.=	"<div class='friendInfoArea'>";
 									$onlinehtml.=	"	<span class='friendnickname'>".$friendnickname."</span>";
+									$onlinehtml.=	"	<div class='messageicon'></div>	";
 									$onlinehtml.=	"</div>";
 									$onlinehtml.="</li>";
 								}
 								else{
-									$offlinehtml.="<li class='friendlistli'>";
+									$offlinehtml.="<li friendid='$friendid' friendnickname='$friendnickname' class='friendlistli'>";
 									$offlinehtml.=	"<div class='friendlisthead'> <img src=".$friendheadimg." /></div>";
 									$offlinehtml.=	"<div class='friendInfoArea'>";
 									$offlinehtml.=	"	<span class='friendnickname'>".$friendnickname."</span>";
+									$offlinehtml.=	"	<div class='messageicon'></div>	";
 									$offlinehtml.=	"</div>";
 									$offlinehtml.="</li>";
 								}
@@ -116,10 +122,25 @@
 		<div class="talkArea">
 			<div class="talkform">
 				<div class="talkheader">与xxx聊天</div>	
-				<div class="talkhistory"></div>
+				<div class="talkhistory">
+					<!-- <div class="friendconversationArea">
+						<div class="friendtalkheadpic"></div>
+						<div class="frienddialogArea">
+						<div class="frienddialog">aaaassssssfafrawserawfrawsefkjcakjiofjwirawserawfrawsefkjcakjiofjwi		
+						</div>
+						</div>			
+					</div> -->
+					<!-- <div class="myconversationArea">
+						<div class="mytalkheadpic"></div>
+						<div class="mydialogArea">
+						<div class="mydialog">aaaassssssfafrawseraw		
+						</div>
+						</div>
+					</div> -->
+				</div>
 				<div class="talktext">
 					<div class="inputtxt">
-						<input type="text" class="inputmessage"/>
+						<input type="text" maxlength="4000" class="inputmessage"/>
 					</div>
 					<div class="talksendbtn">
 						<input type="submit" value="发送" class="msgsendbtn"/>

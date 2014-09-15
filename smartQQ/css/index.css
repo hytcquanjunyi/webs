@@ -18,8 +18,20 @@ input{outline: none;}
 	border:1px solid #ccc;
 	margin-left: 10px;
 	float: left;
+	position: relative;
 }
 
+.logoutbtn{
+	width: 50px;
+	font-size: 12px;
+	text-align: center;
+	cursor: pointer;
+	background: #ccc;
+	padding: 5px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
 .userinfoArea{
 	width: 100%;
 	height: 80px;
@@ -76,6 +88,7 @@ input{outline: none;}
 	height: 40px;
 	float: right;
 	cursor: pointer;
+	position: relative;
 }
 .friendnickname{
 	display: block;
@@ -98,8 +111,8 @@ input{outline: none;}
 
 .talkArea{
 	
-	min-width: 687px;
-	height: 600px;
+	width: 687px;
+	height: auto;
 
 	float: right;
 	overflow: hidden;
@@ -116,12 +129,15 @@ input{outline: none;}
 .talkhistory{
 	width: auto;
 	height: 500px;
+	overflow: auto;
 }
 
 .talkform{
 	width: 99%;
 	height: 600px;
+	
 	border:1px solid #ccc;
+	display: none;
 }
 
 .talktext{
@@ -149,7 +165,68 @@ input{outline: none;}
 
 .msgsendbtn{
 	width: 100px;
-	height: 42px;
+	height: 40px;
 	border:1px solid #ccc;
 	cursor: pointer;
+}
+
+
+.messageicon{
+	display: none;
+	width: 5px;
+	height: 5px;
+	background: red;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+
+.friendconversationArea{
+	margin-top: 10px;
+	position: relative;
+	padding: 10px 100px 10px 50px;
+
+	overflow: hidden;
+}
+.myconversationArea{
+	margin-top: 10px;
+	position: relative;
+	padding: 10px 50px 10px 100px;
+	
+	overflow: hidden;
+}
+.frienddialog{	
+	float: left;
+	padding: 5px;
+	background: #ccc;
+	border-radius: 5px;
+	word-break:break-all;
+}
+.mydialog{	
+	float: right;
+	padding: 5px;
+	background: #ccc;
+	border-radius: 5px;
+	word-break:break-all;
+}
+.friendtalkheadpic{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background: #ccc;
+	top: 0;
+	left: 10px;
+}
+.mytalkheadpic{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background: #ccc;
+	top: 0;
+	right: 10px;
+}
+
+.frienddialogArea{
+	width: 100%;
+
 }
