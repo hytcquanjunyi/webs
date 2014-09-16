@@ -25,7 +25,6 @@ $(function(){
 	$(".friendlistli").click(function(){
 		var flag =$(this).attr("flag");
 		if (flag=="open") {
-
 			return;
 		}
 		$(this).find(".messageicon").hide();
@@ -37,7 +36,7 @@ $(function(){
 		$(".talkhistory").html("");
 		var receiverid=$(this).attr("friendid");
 		gethistory();
-		$.ajax({
+		/*$.ajax({
 			type:"post",
 			url:("ws/webservice.php"),
 			data:{flag:"yidu",rmsgReceiverid:receiverid},
@@ -62,7 +61,8 @@ $(function(){
 				
 				
 			}	
-		});
+		});*/
+		receivemsg();
 	});
 
 	$(".msgsendbtn").click(function(){
@@ -90,6 +90,23 @@ $(function(){
 	});
 	//setTimeout("receivemsg()",1000);
 	setInterval("receivemsg()",1000);
+
+
+	$(".closeaddfriendArea").click(function(){
+		$(".mengban").hide();
+		$(".addfriendArea").hide();
+		
+	});
+
+	$(".addfriendicon").click(function(){
+		$(".mengban").show();
+		$(".addfriendArea").show();
+	});
+	$(".closetalkformspan").click(function(){
+		$(".talkform").hide();
+		$(".msgsendbtn").removeAttr("friendid");
+		$(".friendlistli").attr("flag","close");
+	});
 });
 
 function receivemsg(){
@@ -98,6 +115,7 @@ function receivemsg(){
 			type:"post",
 			url:("ws/webservice.php"),
 			data:{flag:"receivemsg"},
+			async:false,
 			success:function(res){
 				if (res == "fail") {return;}
 				var array =eval(res);
@@ -111,6 +129,7 @@ function receivemsg(){
 							type:"post",
 							url:("ws/webservice.php"),
 							data:{flag:"yidu",rmsgReceiverid:receiverid},
+							async:false,
 							success:function(res){
 								if (res == "fail1") {return;}
 								var array=eval(res);								

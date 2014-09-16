@@ -42,6 +42,28 @@
 	<script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
+	<div class="mengban">		
+	</div>
+	<div class="addfriendArea">
+		<div class="closeaddfriendArea">x</div>
+		<div class="addfriendinfoArea">
+			<p><span class="spaninput">ID:</span><input type="text" id="adduserid"></p>
+			<p><span class="spaninput">昵称:</span><input type="text" id="addusername"></p>
+		</div>
+		<div class="addfriendbtnArea"><input type="submit" class="addfriendbtn" value="查找好友" /></div>
+		<div class="searchresultlist">
+			<ul>
+				<li><span class="colum">ID</span><span class="colum">昵称</span><span href="" class="colum">操作</span></li>
+				<li><span class="colum">1</span><span class="colum">小明</span><span href="" class="colum"><a href="">添加</a></span></li>
+				<li><span class="colum">1</span><span class="colum">小明</span><span href="" class="colum"><a href="">添加</a></span></li>
+				<li><span class="colum">1</span><span class="colum">小明</span><span href="" class="colum"><a href="">添加</a></span></li>
+				<li><span class="colum">1</span><span class="colum">小明</span><span href="" class="colum"><a href="">添加</a></span></li>
+				<li><span class="colum">1</span><span class="colum">小明</span><span href="" class="colum"><a href="">添加</a></span></li>
+				<li><span class="colum">1</span><span class="colum">小明</span><span href="" class="colum"><a href="">添加</a></span></li>
+			</ul>
+		</div>
+	</div> 
+
 	<div class="main">
 		<div class="friendlistArea">
 			<div class="userinfoArea">
@@ -59,6 +81,7 @@
 					<div class="userState">
 						
 					</div>
+					<div class="addfriendicon" title="添加好友">+</div>
 				</div>
 				<div class="logoutbtn">退出</div>
 			</div>
@@ -121,22 +144,24 @@
 		</div>
 		<div class="talkArea">
 			<div class="talkform">
-				<div class="talkheader">与xxx聊天</div>	
+				<div class="closetalkform"><span class="closetalkformspan" >x</span></div>
+				<div class="talkheader">与xxx聊天 </div>	
 				<div class="talkhistory">
-					<!-- <div class="friendconversationArea">
+					<div class="friendconversationArea">
 						<div class="friendtalkheadpic"></div>
 						<div class="frienddialogArea">
-						<div class="frienddialog">aaaassssssfafrawserawfrawsefkjcakjiofjwirawserawfrawsefkjcakjiofjwi		
-						</div>
+							<div class="frienddialog">aaaassssssfafrawserawfrawsefkjcakjiofjwirawserawfrawsefkjcakjiofjwi		
+							</div>
 						</div>			
-					</div> -->
-					<!-- <div class="myconversationArea">
+					</div> 					
+					<div class="myconversationArea">
 						<div class="mytalkheadpic"></div>
 						<div class="mydialogArea">
-						<div class="mydialog">aaaassssssfafrawseraw		
-						</div>
-						</div>
-					</div> -->
+							<div class="mydialog">aaaassssssfafrawserawfrawsefkjcakjiofjwirawserawfrawsefkjcakjiofjwi		
+							</div>
+						</div>			
+					</div> 
+					
 				</div>
 				<div class="talktext">
 					<div class="inputtxt">

@@ -1,10 +1,116 @@
 *{margin: 0;padding: 0;}
 li,ul{list-style: none;}
+body{
+	font-size: 12px;
+}
 img{border:none;width: 100%;height: auto;}
+a{text-decoration: none;}
 input{outline: none;}
 .clear{
 	clear:both;
 }
+
+.mengban{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background: rgba(255, 255, 255, 0.5);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#BBffffff,endcolorstr=#BBffffff);
+}
+.addfriend{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.addfriend a{
+	font-size: 20px;
+	font-weight: bold;
+}
+.addfriendArea{
+	width: 600px;
+	height: 400px;
+	position: fixed;
+	border:1px solid #ccc;
+	z-index: 10001;
+	top:30px;
+	left: 27%;
+	right: 27%;
+	margin: auto; 
+
+}
+.addfriendinfoArea{
+	width: 356px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom:20px; 
+	position: relative;
+}
+.mydialogArea{
+	overflow: hidden;
+}
+.spaninput{
+	display: block;
+	width: 50px;
+	height: auto;
+	float: left;
+}
+
+.addfriendinfoArea p{
+	line-height: 40px;
+	padding-top: 20px;
+}
+#adduserid,#addusername{
+	width: 230px;
+	height: 40px;
+	font-size: 18px;
+}
+
+
+.addfriendbtnArea{
+	width: 250px;
+	margin: auto;
+}
+.addfriendbtn{
+	width: 200px;
+	height: 50px;
+	border: 0;
+	cursor: pointer;
+}
+.closeaddfriendArea{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top:0;
+	right: 0;
+	font-size: 30px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.searchresultlist{
+	width: 350px;
+	height: 100px;
+	padding: 10px;
+	margin: auto;
+	margin-top:20px; 
+	overflow: auto;
+	border:1px solid #ccc;
+}
+.searchresultlist li{
+	text-align: center;
+	overflow: hidden;
+	height: 20px;
+	line-height: 20px;
+}
+.colum{
+	width: 110px;
+	float: left;
+	display: block;
+}
+
+
+
+
 .main{
 	width: 1000px;
 	min-width: 800px;
@@ -49,7 +155,7 @@ input{outline: none;}
 	width: 200px;
 	height: 60px;
 	margin-top:10px; 
-
+	position: relative;
 	float:left;
 }
 .userProName{
@@ -125,6 +231,7 @@ input{outline: none;}
 	text-align: center;
 	font-weight: bold;
 	background: #ccc;
+	
 }
 .talkhistory{
 	width: auto;
@@ -135,7 +242,7 @@ input{outline: none;}
 .talkform{
 	width: 99%;
 	height: 600px;
-	
+	position: relative;
 	border:1px solid #ccc;
 	display: none;
 }
@@ -183,14 +290,14 @@ input{outline: none;}
 
 .friendconversationArea{
 	margin-top: 10px;
-	position: relative;
+	
 	padding: 10px 100px 10px 50px;
 
 	overflow: hidden;
 }
 .myconversationArea{
 	margin-top: 10px;
-	position: relative;
+
 	padding: 10px 50px 10px 100px;
 	
 	overflow: hidden;
@@ -208,25 +315,58 @@ input{outline: none;}
 	background: #ccc;
 	border-radius: 5px;
 	word-break:break-all;
+	margin-right: 10px;
 }
 .friendtalkheadpic{
-	position: absolute;
+	
 	width: 30px;
 	height: 30px;
 	background: #ccc;
-	top: 0;
-	left: 10px;
+	margin-left: -40px;
+	float: left;
 }
 .mytalkheadpic{
-	position: absolute;
+	
 	width: 30px;
 	height: 30px;
 	background: #ccc;
-	top: 0;
-	right: 10px;
+	margin-right: -30px;
+	float: right;
 }
 
 .frienddialogArea{
 	width: 100%;
+	overflow: hidden;
+}
+.mydialogArea{
+	width: 100%;
+	overflow: hidden;
+}
+.frienddialogArea{
+	width: 100%;
+	overflow: hidden;
+}
+.addfriendicon{
+	
+	position: absolute;
+	bottom: 0;
+	right: 5px;
+	font-size: 20px;
+	cursor: pointer;
+	font-weight: 9000;
+	font-weight: bold;
+	
+}
 
+.closetalkform{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-weight: bold;
+	font-size:20px;
+}
+.closetalkformspan{
+	cursor:pointer;
 }
