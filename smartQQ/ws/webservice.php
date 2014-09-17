@@ -51,7 +51,7 @@
 	}
 	if ($flag=="gethistory") {
 
-		$sql="select * FROM messageinfo WHERE msgSender in($curuserid,$gethistorymsgReceiverid) and msgReceiver in($curuserid,$gethistorymsgReceiverid) and msgSendTime>now()-interval 1 hour order by msgSendTime";
+		$sql="select * FROM messageinfo WHERE msgSender in($curuserid,$gethistorymsgReceiverid) and msgReceiver in($curuserid,$gethistorymsgReceiverid) and msgState='read' and msgSendTime>now()-interval 1 hour order by msgSendTime";
 		
 		$res=$db->get_results($sql);
 
@@ -61,6 +61,42 @@
 		}
 		echo json_encode($res);
 		
+	}
+	if($flag=="searchfriend"){
+			$searchid=isset($_POST["searchid"])?$_POST["searchid"]:"";
+			$searchname=isset($_POST["searchname"])?$_POST["searchname"]:"";
+
+			$sql="select * from userinfo where 1=1 ";
+
+			if ($searchid!="") {
+				$sql.=" and id=".$searchid;
+			}
+			if ($searchname!="") {
+				$sql.=" and userNickname='".$searchname."'";
+			}
+			
+			if ($searchid =="" and $searchname=="") {
+				echo "nocondition";
+				die();
+			}
+			$res=$db->get_results($sql);
+			if (!$res || count($res)==0) {
+				echo "noone";
+				die();
+			}
+			echo json_encode($res);
+	}
+	if($flag=="addfriend"){
+		$receiverid=isset($_POST["receiverid"])?$_POST["receiverid"]:"";
+		
+		$sql="insert into requestinfo(requestSenderID,requestReceiverID,requestEvent,requestState) values(".$curuserid.",".$receiverid.",'addfriend','undo')";
+		$db->query($sql);
+		echo "已发送请求";
+	}
+	if ($flag="dealaddrequest") {
+		$sql="select * from requestinfo where reuqestEvent='addfriend'";
+		
+
 	}
 
  ?>

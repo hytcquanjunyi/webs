@@ -1,4 +1,7 @@
 $(function(){
+
+	$(".mengban").css('opacity','0.5');
+
 	$(".statetitleon").attr("flag","open");
 	$(".statetitleoff").attr("flag","open");
 	$(".statetitleon").click(function(){
@@ -23,6 +26,7 @@ $(function(){
 
 
 	$(".friendlistli").click(function(){
+		
 		var flag =$(this).attr("flag");
 		if (flag=="open") {
 			return;
@@ -107,6 +111,74 @@ $(function(){
 		$(".msgsendbtn").removeAttr("friendid");
 		$(".friendlistli").attr("flag","close");
 	});
+
+
+
+	$(".searchfriendbtn").click(function(){
+		$(".searchresultlistul2").html("");
+		var id=$("#adduserid").val();
+		var name=$("#addusername").val();
+		$.ajax({
+			type:"POST",
+			url:"ws/webservice.php",
+			data:{flag:"searchfriend",searchid:id,searchname:name},
+			success:function(res){
+
+				if (res=="noone") {
+					alert("没有符合条件的");
+					return;
+				}
+				if (res=="nocondition") {
+					alert("请输入查询条件");
+					return;
+				}
+				var obj=eval(res);
+				$.each(obj,function(){
+					var html ="";
+					html+="<li>";
+					html+="	<span class='colum'>"+this.id+"</span>";
+					html+=" <span class='colum'>"+this.userNickname+"</span>";
+					html+=" <span class='colum'><a  friendid='"+this.id+"' class='addthis'>添加</a></span>";
+					html+="</li>";
+					$(".searchresultlistul2").append(html);
+				});
+				
+
+			}
+		});
+		$(document).on( "click",".addthis" ,function(){
+			var id=$(this).attr("friendid");
+			$.ajax({
+				type:"POST",
+				url:"ws/webservice.php",
+				data:{flag:"addfriend",receiverid:id},
+				success:function(res){
+					alert(res);
+				}
+			});
+		});
+
+	});
+
+
+	$(".requesticon").click(function(){
+		if ($(".requestlistArea").css("display")=="block") {
+			$(".requestlistArea").hide();
+		}else{
+			$(".requestlistArea").show();
+		}
+		$.ajax({
+			type:"POST",
+			url:"ws/webservice.php",
+			data:{flag:"dealaddrequest"},
+			success:function(res){
+				alert(res);
+			}
+		});
+	});
+	$(".closerequestlistArea").click(function(){
+		$(".requestlistArea").hide();
+	});
 });
 
 function receivemsg(){
@@ -175,6 +247,7 @@ function gethistory(){
 	$.ajax({
 			type:"post",
 			url:("ws/webservice.php"),
+			async:false,
 			data:{flag:"gethistory",gethistorymsgReceiverid:receiverid},
 			success:function(res){
 				if (res == "fail2") {return;}

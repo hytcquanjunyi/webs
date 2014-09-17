@@ -50,22 +50,27 @@
 			<p><span class="spaninput">ID:</span><input type="text" id="adduserid"></p>
 			<p><span class="spaninput">昵称:</span><input type="text" id="addusername"></p>
 		</div>
-		<div class="addfriendbtnArea"><input type="submit" class="addfriendbtn" value="查找好友" /></div>
+		<div class="addfriendbtnArea"><input type="submit" class="searchfriendbtn" value="查找好友" /></div>
 		<div class="searchresultlist">
-			<ul>
-				<li><span class="colum">ID</span><span class="colum">昵称</span><span href="" class="colum">操作</span></li>
-				<li><span class="colum">1</span><span class="colum">小明</span><span href="" class="colum"><a href="">添加</a></span></li>
-				<li><span class="colum">1</span><span class="colum">小明</span><span href="" class="colum"><a href="">添加</a></span></li>
-				<li><span class="colum">1</span><span class="colum">小明</span><span href="" class="colum"><a href="">添加</a></span></li>
-				<li><span class="colum">1</span><span class="colum">小明</span><span href="" class="colum"><a href="">添加</a></span></li>
-				<li><span class="colum">1</span><span class="colum">小明</span><span href="" class="colum"><a href="">添加</a></span></li>
-				<li><span class="colum">1</span><span class="colum">小明</span><span href="" class="colum"><a href="">添加</a></span></li>
+			<ul class="searchresultlistul">
+				<li><span class="colum">ID</span><span class="colum">昵称</span><span class="colum">操作</span></li>
+				<li class="searchresultlistul2">
+					
+				</li>
+				<!-- <li>
+						<span class="colum">1</span>
+						<span class="colum">小明</span>
+						<span class="colum">
+							<a href="#" friendid='1' class="addthis">添加</a>
+						</span>
+					</li>-->
+
 			</ul>
 		</div>
 	</div> 
 
 	<div class="main">
-		<div class="friendlistArea">
+		<div class="friendlistArea">		
 			<div class="userinfoArea">
 				<div class="userheadimgArea">
 					<?php 
@@ -82,6 +87,7 @@
 						
 					</div>
 					<div class="addfriendicon" title="添加好友">+</div>
+					 <div class="requesticon" title="好友请求">*</div> 
 				</div>
 				<div class="logoutbtn">退出</div>
 			</div>
@@ -127,7 +133,8 @@
 						<div class="friendInfoArea">
 							<span class="friendnickname"> 姓名</span>
 						</div>
-					</li> -->
+					</li>  -->
+
 				</ul>
 				<span class="statetitleoff">离线好友</span>
 				<ul class="offlinelist">
@@ -141,8 +148,37 @@
 				</ul>
 
 			</ul>
-		</div>
+		</div>	
 		<div class="talkArea">
+		<div class="requestlistArea">
+				<div class="closerequestlistArea">x</div>
+				<ul class="requestlistul">
+					<li>
+						<span class="colum2">ID为1的小明请求加你为好友</span>
+						<span class="colum3" ><a friendid="1" class="agreeaddthis">同意</a></span>
+					</li>
+					<li>
+						<span class="colum2">ID为1的小明请求加你为好友</span>
+						<span class="colum3" ><a friendid="1" class="agreeaddthis">同意</a></span>
+					</li>
+					<li>
+						<span class="colum2">ID为1的小明请求加你为好友</span>
+						<span class="colum3" ><a friendid="1" class="agreeaddthis">同意</a></span>
+					</li>
+					<li>
+						<span class="colum2">ID为1的小明请求加你为好友</span>
+						<span class="colum3" ><a friendid="1" class="agreeaddthis">同意</a></span>
+					</li>
+					<li>
+						<span class="colum2">ID为1的小明请求加你为好友</span>
+						<span class="colum3" ><a friendid="1" class="agreeaddthis">同意</a></span>
+					</li>
+					<li>
+						<span class="colum2">ID为1的小明请求加你为好友</span>
+						<span class="colum3" ><a friendid="1" class="agreeaddthis">同意</a></span>
+					</li>
+				</ul>
+		</div>
 			<div class="talkform">
 				<div class="closetalkform"><span class="closetalkformspan" >x</span></div>
 				<div class="talkheader">与xxx聊天 </div>	
