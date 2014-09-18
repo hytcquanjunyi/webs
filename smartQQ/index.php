@@ -15,12 +15,38 @@
 			die();
 		}
 		else{
+
+			$sql2="select * from friendsinfo where userid='$userid'";
+		
+			$result=$db->get_results($sql2);
+
+			if (!$result) {
+				echo "null";
+				die();
+			}
+			else{
+
+				if (isset($_SESSION["myid"])) {
+					echo "已登陆";
+				}
+				else{
+					foreach ($result as $friend) {
+						$friendid=$friend->friendid;
+						$sql3="insert into messageinfo(msgType,msgContent,msgSender,msgReceiver,msgSendTime,msgState) values('unnormal','login','$userid','$friendid',now(),'unread')";
+						$db->query($sql3);
+					}
+				}
+			}
+
 			$_SESSION["myid"]=$userid;
 			$_SESSION["mynickname"]=$res->userNickname;
 			$_SESSION["myheadimg"]=$res->userHeadImage;
 			$sql="update userinfo set userState='online' where concat(id)='".$userid."'";
 			$db->query($sql);
-			echo "success";			
+
+			
+			//$sql3="insert into messageinfo(msgType,msgContent,msgSender,msgReceiver,msgSendTime,msgState) values('unnormal','login','$userid','$friendid')";
+			//echo "success";			
 		}
 	}
 	$curid=isset($_SESSION["myid"])?$_SESSION["myid"]:"";
@@ -78,7 +104,7 @@
 				 	?>
 				 </div>
 				<div class="userProfile">
-					<a href="" class="userProName">
+					<a href="" class="userProName" >
 						<?php 
 					 		echo "$curnickName";
 					 	?>
@@ -107,7 +133,7 @@
 								$friendnickname=$friend->userNickname;
 								$friendid=$friend->friendid;
 								if($friend->userState=='online'){
-									$onlinehtml.="<li friendid='$friendid'  friendnickname='$friendnickname' class='friendlistli'>";
+									$onlinehtml.="<li id='friend".$friendid."' friendid='$friendid'  friendnickname='$friendnickname' class='friendlistli'>";
 									$onlinehtml.=	"<div class='friendlisthead'> <img src=".$friendheadimg." /></div>";
 									$onlinehtml.=	"<div class='friendInfoArea'>";
 									$onlinehtml.=	"	<span class='friendnickname'>".$friendnickname."</span>";
@@ -116,7 +142,7 @@
 									$onlinehtml.="</li>";
 								}
 								else{
-									$offlinehtml.="<li friendid='$friendid' friendnickname='$friendnickname' class='friendlistli'>";
+									$offlinehtml.="<li id='friend".$friendid."' friendid='$friendid' friendnickname='$friendnickname' class='friendlistli'>";
 									$offlinehtml.=	"<div class='friendlisthead'> <img src=".$friendheadimg." /></div>";
 									$offlinehtml.=	"<div class='friendInfoArea'>";
 									$offlinehtml.=	"	<span class='friendnickname'>".$friendnickname."</span>";
@@ -153,30 +179,11 @@
 		<div class="requestlistArea">
 				<div class="closerequestlistArea">x</div>
 				<ul class="requestlistul">
-					<li>
+					<!-- <li>
 						<span class="colum2">ID为1的小明请求加你为好友</span>
 						<span class="colum3" ><a friendid="1" class="agreeaddthis">同意</a></span>
-					</li>
-					<li>
-						<span class="colum2">ID为1的小明请求加你为好友</span>
-						<span class="colum3" ><a friendid="1" class="agreeaddthis">同意</a></span>
-					</li>
-					<li>
-						<span class="colum2">ID为1的小明请求加你为好友</span>
-						<span class="colum3" ><a friendid="1" class="agreeaddthis">同意</a></span>
-					</li>
-					<li>
-						<span class="colum2">ID为1的小明请求加你为好友</span>
-						<span class="colum3" ><a friendid="1" class="agreeaddthis">同意</a></span>
-					</li>
-					<li>
-						<span class="colum2">ID为1的小明请求加你为好友</span>
-						<span class="colum3" ><a friendid="1" class="agreeaddthis">同意</a></span>
-					</li>
-					<li>
-						<span class="colum2">ID为1的小明请求加你为好友</span>
-						<span class="colum3" ><a friendid="1" class="agreeaddthis">同意</a></span>
-					</li>
+					</li> -->
+					
 				</ul>
 		</div>
 			<div class="talkform">

@@ -388,6 +388,7 @@ input{outline: none;}
 	border: 1px solid #ccc;
 	margin: auto;
 	position: relative;
+	display: none;
 }
 .closerequestlistArea{
 	position: absolute;

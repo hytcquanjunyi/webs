@@ -24,9 +24,20 @@ $(function(){
 		}
 	});
 
+	$(".logoutbtn").click(function(){
+		$.ajax({
+			type:"post",
+			url:("ws/webservice.php"),
+			data:{flag:"logout"},
+			success:function(res){
+				$("body").append(res);
+					window.location.replace("login.php");
+				
+			}
+		});
+	});
 
-	$(".friendlistli").click(function(){
-		
+	$(document).on("click",".friendlistli",function(){
 		var flag =$(this).attr("flag");
 		if (flag=="open") {
 			return;
@@ -39,7 +50,9 @@ $(function(){
 		$(".msgsendbtn").attr("friendid",$(this).attr("friendid"));
 		$(".talkhistory").html("");
 		var receiverid=$(this).attr("friendid");
+
 		gethistory();
+
 		/*$.ajax({
 			type:"post",
 			url:("ws/webservice.php"),
@@ -66,8 +79,52 @@ $(function(){
 				
 			}	
 		});*/
+		
 		receivemsg();
 	});
+	/*$(".friendlistli").click(function(){
+		
+		var flag =$(this).attr("flag");
+		if (flag=="open") {
+			return;
+		}
+		$(this).find(".messageicon").hide();
+		$(".friendlistli").attr("flag","close");
+		$(this).attr("flag","open");
+		$(".talkform").show();
+		$(".talkheader").html($(this).attr("friendnickname"));
+		$(".msgsendbtn").attr("friendid",$(this).attr("friendid"));
+		$(".talkhistory").html("");
+		var receiverid=$(this).attr("friendid");
+		gethistory();
+		$.ajax({
+			type:"post",
+			url:("ws/webservice.php"),
+			data:{flag:"yidu",rmsgReceiverid:receiverid},
+			success:function(res){
+				if (res == "fail1") {return;}
+				var array=eval(res);
+				
+				$.each(array,function(){
+					//alert(this.msgContent);
+					var th=this;
+					var html ="";
+					html+="<div class='friendconversationArea'>";
+					html+="	<div class='friendtalkheadpic'></div>";
+					html+="		<div class='frienddialogArea'>";
+					html+="		<div class='frienddialog'>"+this.msgContent;		
+					html+="		</div>";
+					html+="	</div>";			
+					html+="</div>";
+					$(".talkhistory").append(html);
+
+				});
+				
+				
+			}	
+		});
+		receivemsg();
+	});*/
 
 	$(".msgsendbtn").click(function(){
 		msgtxt=$(".inputmessage").val();
@@ -94,6 +151,8 @@ $(function(){
 	});
 	//setTimeout("receivemsg()",1000);
 	setInterval("receivemsg()",1000);
+	//setTimeout("checklogin()",1000);
+	setInterval("checklogin()",1000);
 
 
 	$(".closeaddfriendArea").click(function(){
@@ -147,7 +206,7 @@ $(function(){
 			}
 		});
 		$(document).on( "click",".addthis" ,function(){
-			var id=$(this).attr("friendid");
+			var id=$(this).attr("friendid");			
 			$.ajax({
 				type:"POST",
 				url:"ws/webservice.php",
@@ -163,22 +222,62 @@ $(function(){
 
 	$(".requesticon").click(function(){
 		if ($(".requestlistArea").css("display")=="block") {
+
 			$(".requestlistArea").hide();
+
 		}else{
 			$(".requestlistArea").show();
 		}
+		$(".requestlistul").html("");
 		$.ajax({
 			type:"POST",
 			url:"ws/webservice.php",
 			data:{flag:"dealaddrequest"},
 			success:function(res){
-				alert(res);
+				if (res=="noresult") {
+					$(".requestlistul").append("<li>没有任何请求</li>");
+					
+					return;
+				};
+				var obj=eval(res);
+				$.each(obj,function(){
+					
+					var html="";
+					html+="<li>";
+					html+="	<span class='colum2'>ID为"+this.msgSender+"的"+this.userNickname+"请求加你为好友</span>";
+					html+="	<span class='colum3' ><a friendid='"+this.msgSender+"' class='agreeaddthis'>同意</a></span>";
+					html+="</li>";
+					$(".requestlistul").append(html);
+				});
 			}
 		});
 	});
 	$(".closerequestlistArea").click(function(){
 		$(".requestlistArea").hide();
 	});
+
+	$(document).on("click",".agreeaddthis",function(){
+		var id=$(this).attr("friendid");
+		$.ajax({
+			type:"post",
+			url:("ws/webservice.php"),
+			data:{flag:"agreethis",friendid:id},
+			success:function(res){
+				alert(res);
+			}
+		});
+	});
+	/*$(".agreeaddthis").click(function(){
+		var id=$(this).attr("friendid");
+		$,ajax({
+			type:"post",
+			url:("ws/webservice.php"),
+			data:{flag:"agreethis",friendid:id},
+			success:function(res){
+				alert(res);
+			}
+		});
+	});*/
 });
 
 function receivemsg(){
@@ -240,16 +339,76 @@ function receivemsg(){
 				//$("body").append(res);
 			}
 		});
+
+
+}
+
+function checklogin(){
+	$.ajax({
+		type:"post",
+			url:("ws/webservice.php"),
+			data:{flag:"checklogin"},
+			async:false,
+			success:function(res){
+				if (res=="nologin") {
+					return;
+				}
+				var obj=eval(res);
+				$.each(obj,function(){
+					$("#friend"+this.id+"").remove();
+					var html="";
+					html+="<li id='friend"+this.id+"' friendid='"+this.id+"'  friendnickname='"+this.userNickname+"' class='friendlistli'>";
+					html+=	"<div class='friendlisthead'> <img src= "+this.userHeadImage+" /></div>";
+					html+=	"<div class='friendInfoArea'>";
+					html+=	"	<span class='friendnickname'>"+this.userNickname+"</span>";
+					html+=	"	<div class='messageicon'></div>	";
+					html+=	"</div>";
+					html+="</li>";
+					$(".onlinelist").append(html);
+
+
+				});
+			}
+	});
+	$.ajax({
+		type:"post",
+			url:("ws/webservice.php"),
+			data:{flag:"checklogout"},
+			async:false,
+			success:function(res){
+				//$("body").append(res);
+				if (res=="nologout") {
+					return;
+				}
+				var obj=eval(res);
+				$.each(obj,function(){
+					$("#friend"+this.id+"").remove();
+					var html="";
+					html+="<li id='friend"+this.id+"' friendid='"+this.id+"'  friendnickname='"+this.userNickname+"' class='friendlistli'>";
+					html+=	"<div class='friendlisthead'> <img src= "+this.userHeadImage+" /></div>";
+					html+=	"<div class='friendInfoArea'>";
+					html+=	"	<span class='friendnickname'>"+this.userNickname+"</span>";
+					html+=	"	<div class='messageicon'></div>	";
+					html+=	"</div>";
+					html+="</li>";
+					$(".offlinelist").append(html);
+
+
+				});
+			}
+	});
 }
 
 function gethistory(){
 	var receiverid=$(".msgsendbtn").attr("friendid");
+
 	$.ajax({
 			type:"post",
 			url:("ws/webservice.php"),
 			async:false,
 			data:{flag:"gethistory",gethistorymsgReceiverid:receiverid},
 			success:function(res){
+
 				if (res == "fail2") {return;}
 				
 				var array=eval(res);

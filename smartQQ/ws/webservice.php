@@ -26,7 +26,7 @@
 		die();
 	}
 	if ($flag=="receivemsg") {
-		$sql="select * from messageinfo where msgReceiver=$curuserid and msgState='unread' ";	
+		$sql="select * from messageinfo where msgReceiver=$curuserid and msgState='unread' and msgType='normal' ";	
 
 		$res=$db->get_results($sql);
 		if (!$res || count($res) == 0) {
@@ -37,7 +37,7 @@
 		die();
 	}
 	if ($flag=="yidu") {
-		$sql="select * from messageinfo where msgReceiver=$curuserid and msgSender='$rmsgReceiverid' and msgState='unread'";
+		$sql="select * from messageinfo where msgReceiver=$curuserid and msgSender='$rmsgReceiverid' and msgState='unread' and msgType='normal'";
 		$res=$db->get_results($sql);
 		if (!$res || count($res) == 0) {
 			echo "fail1";
@@ -51,7 +51,7 @@
 	}
 	if ($flag=="gethistory") {
 
-		$sql="select * FROM messageinfo WHERE msgSender in($curuserid,$gethistorymsgReceiverid) and msgReceiver in($curuserid,$gethistorymsgReceiverid) and msgState='read' and msgSendTime>now()-interval 1 hour order by msgSendTime";
+		$sql="select * FROM messageinfo WHERE msgSender in($curuserid,$gethistorymsgReceiverid) and msgReceiver in($curuserid,$gethistorymsgReceiverid) and msgState='read' and msgType='normal' and msgSendTime>now()-interval 1 hour order by msgSendTime";
 		
 		$res=$db->get_results($sql);
 
@@ -85,18 +85,89 @@
 				die();
 			}
 			echo json_encode($res);
+			die();
 	}
 	if($flag=="addfriend"){
 		$receiverid=isset($_POST["receiverid"])?$_POST["receiverid"]:"";
+		if($receiverid==$curuserid){
+			echo "不能添加自己为好友";
+			die();
+		}
+
+		$check="select * from friendsinfo where userid=$curuserid and friendid=$receiverid";
+		$res=$db->get_results($check);
+		if (count($res)!=0) {
+			echo "你们已经是好友了";
+			die();
+		}
 		
-		$sql="insert into requestinfo(requestSenderID,requestReceiverID,requestEvent,requestState) values(".$curuserid.",".$receiverid.",'addfriend','undo')";
+		$sql="insert into messageinfo(msgType,msgContent,msgSender,msgReceiver,msgSendTime,msgState) values('unnormal','addfriend',".$curuserid.",".$receiverid.",now(),'undo')";
+
 		$db->query($sql);
 		echo "已发送请求";
+		die();
 	}
-	if ($flag="dealaddrequest") {
-		$sql="select * from requestinfo where reuqestEvent='addfriend'";
-		
+	if ($flag=="dealaddrequest") {
+		$sql="select * from messageinfo,userinfo where messageinfo.msgSender=userinfo.id and msgType='unnormal' and msgContent='addfriend' and msgState='undo' and msgReceiver=".$curuserid;
+		$res=$db->get_results($sql);
+		if (!$res || count($res)==0) {
+			echo "noresult";
+			die();
+		}
+		echo json_encode($res);	
+		die();
+	}
+	if ($flag=="agreethis") {
 
+
+		$friendid=isset($_POST["friendid"])?$_POST["friendid"]:"";
+
+		$sql1="insert into friendsinfo(userid,friendid,friendNotename) values(".$curuserid.",".$friendid.",'newfriend')";
+		$db->query($sql1);
+		$sql2="insert into friendsinfo(userid,friendid,friendNotename) values(".$friendid.",".$curuserid.",'newfriend')";
+		$db->query($sql2);
+
+		$sql3="update messageinfo set msgState='done' where msgType='unnormal' and msgSender='$friendid' and msgReceiver='$curuserid' and msgContent='addfriend'";
+		$db->query($sql3);
+		echo "success";die();
 	}
+	if ($flag=="checklogin") {
+		$sql="select * from messageinfo,userinfo where messageinfo.msgSender=userinfo.id  and msgType='unnormal' and msgContent='login' and msgReceiver='$curuserid' and msgState='unread'";
+		$res=$db->get_results($sql);
+		if (!$res || count($res)==0) {
+			echo "nologin";die();
+		}
+		echo json_encode($res);
+		$sql2="update messageinfo set msgState='read' where msgType='unnormal' and msgContent='login' and msgReceiver='$curuserid' and msgState='unread'";
+		$db->query("$sql2");
+	}
+
+	if ($flag=="logout") {
+		$sql1="update userinfo set userState='offline' where id=$curuserid";
+		$db->query($sql1);
+		$sql2="select * from friendsinfo where userid='$curuserid'";		
+		$result=$db->get_results($sql2);
+		foreach ($result as $friend) {
+			$friendid=$friend->friendid;
+			$sql3="insert into messageinfo(msgType,msgContent,msgSender,msgReceiver,msgSendTime,msgState) values('unnormal','logout','$curuserid','$friendid',now(),'unread')";
+			
+			$db->query($sql3);
+		}
+		session_destroy();
+		
+		
+	}
+
+	if ($flag=="checklogout") {
+		$sql="select * from messageinfo,userinfo where messageinfo.msgSender=userinfo.id  and msgType='unnormal' and msgContent='logout' and msgReceiver='$curuserid' and msgState='unread'";
+		$res=$db->get_results($sql);
+		if (!$res || count($res)==0) {
+			echo "nologout";die();
+		}
+		echo json_encode($res);
+		$sql2="update messageinfo set msgState='read' where msgType='unnormal' and msgContent='logout' and msgReceiver='$curuserid' and msgState='unread'";
+		$db->query("$sql2");
+	}
+
 
  ?>
