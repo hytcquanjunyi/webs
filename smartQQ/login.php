@@ -50,6 +50,7 @@
 				<div class="signinbtnArea">
 					<input type="submit" value="登 陆" id="login_button"/>
 				</div>
+				<a href="register.php" class="register">注册新用户?</a>
 			</div>
 		</form>
 	</div>

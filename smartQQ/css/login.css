@@ -1,4 +1,7 @@
 *{margin: 0;padding: 0;font-family: '微软雅黑','Helvetica Neue',Helvetica,Arial,sans-serif;}
+body{
+	font-size: 12px;
+}
 li,ul{
 	list-style: none;
 }
@@ -125,6 +128,7 @@ input{outline: none;}
 }
 .signinbtnArea{
 	margin-top: 10px;
+	margin-bottom: 10px;
 }
 #login_button{
 	width: 124px;
@@ -141,4 +145,13 @@ input{outline: none;}
 	color: #ff0000;
 	margin-bottom: 10px;
 	display: block;
+}
+
+.register{
+	color: green;
+	text-decoration: none; 
+}
+.register:hover{
+	color: red;
+	text-decoration: underline;
 }

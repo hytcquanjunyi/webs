@@ -30,7 +30,7 @@ $(function(){
 			url:("ws/webservice.php"),
 			data:{flag:"logout"},
 			success:function(res){
-				$("body").append(res);
+				//$("body").append(res);
 					window.location.replace("login.php");
 				
 			}
@@ -339,8 +339,15 @@ function receivemsg(){
 				//$("body").append(res);
 			}
 		});
+	$.ajax({
+		type:"post",
+		url:("ws/webservice.php"),
+		data:{flag:"updatecurTime"},
+		success:function(res){
+			//$("body").append(res);
+		}
 
-
+	});
 }
 
 function checklogin(){
@@ -370,6 +377,7 @@ function checklogin(){
 				});
 			}
 	});
+
 	$.ajax({
 		type:"post",
 			url:("ws/webservice.php"),
@@ -377,6 +385,7 @@ function checklogin(){
 			async:false,
 			success:function(res){
 				//$("body").append(res);
+
 				if (res=="nologout") {
 					return;
 				}
@@ -397,6 +406,60 @@ function checklogin(){
 				});
 			}
 	});
+	var getdate= new Date();
+	var s=getdate.getSeconds();
+	//$("body").append("/"+s);
+	$.ajax({
+		url:"ws/webservice.php",
+		type:"POST",
+		data:{flag:"checkcurtime"},
+		success:function(res){
+			//$("body").append(res);
+			if (res=="noUnexpectLogout") {
+				return;
+			}
+			var obj=eval(res);
+			$.each(obj,function(){
+
+				$("#friend"+this.id+"").remove();
+				var html="";
+				html+="<li id='friend"+this.id+"' friendid='"+this.id+"'  friendnickname='"+this.userNickname+"' class='friendlistli'>";
+				html+=	"<div class='friendlisthead'> <img src= "+this.userHeadImage+" /></div>";
+				html+=	"<div class='friendInfoArea'>";
+				html+=	"	<span class='friendnickname'>"+this.userNickname+"</span>";
+				html+=	"	<div class='messageicon'></div>	";
+				html+=	"</div>";
+				html+="</li>";
+				$(".offlinelist").append(html);
+				//$("body").append(this.curtime);
+			});
+		}
+	});
+
+	// $.ajax({
+	// 	url:("ws/webservice.php"),
+	// 	data:{flag:"checkcurtime"},
+	// 	async:false,
+	// 	success:function(res){
+	// 		alert(res);
+	// 		if (res=="noUnexpectLogout") {
+	// 			return;
+	// 		}
+	// 		var obj=eval(res);
+	// 		$.each(obj,function(){
+	// 			$("#friend"+this.id+"").remove();
+	// 			var html="";
+	// 			html+="<li id='friend"+this.id+"' friendid='"+this.id+"'  friendnickname='"+this.userNickname+"' class='friendlistli'>";
+	// 			html+=	"<div class='friendlisthead'> <img src= "+this.userHeadImage+" /></div>";
+	// 			html+=	"<div class='friendInfoArea'>";
+	// 			html+=	"	<span class='friendnickname'>"+this.userNickname+"</span>";
+	// 			html+=	"	<div class='messageicon'></div>	";
+	// 			html+=	"</div>";
+	// 			html+="</li>";
+	// 			$(".offlinelist").append(html);
+	// 		});
+	// 	}
+	// });
 }
 
 function gethistory(){

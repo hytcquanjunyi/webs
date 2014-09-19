@@ -47,6 +47,7 @@
 			
 		$sql="update messageinfo set msgState='read' where msgReceiver=$curuserid and msgSender='$rmsgReceiverid'";
 		$db->query($sql);
+		die();
 		//echo "已读";
 	}
 	if ($flag=="gethistory") {
@@ -60,7 +61,7 @@
 			die();
 		}
 		echo json_encode($res);
-		
+		die();
 	}
 	if($flag=="searchfriend"){
 			$searchid=isset($_POST["searchid"])?$_POST["searchid"]:"";
@@ -140,6 +141,7 @@
 		echo json_encode($res);
 		$sql2="update messageinfo set msgState='read' where msgType='unnormal' and msgContent='login' and msgReceiver='$curuserid' and msgState='unread'";
 		$db->query("$sql2");
+		die();
 	}
 
 	if ($flag=="logout") {
@@ -155,11 +157,12 @@
 		}
 		session_destroy();
 		
-		
+		die();
 	}
 
 	if ($flag=="checklogout") {
 		$sql="select * from messageinfo,userinfo where messageinfo.msgSender=userinfo.id  and msgType='unnormal' and msgContent='logout' and msgReceiver='$curuserid' and msgState='unread'";
+
 		$res=$db->get_results($sql);
 		if (!$res || count($res)==0) {
 			echo "nologout";die();
@@ -167,7 +170,33 @@
 		echo json_encode($res);
 		$sql2="update messageinfo set msgState='read' where msgType='unnormal' and msgContent='logout' and msgReceiver='$curuserid' and msgState='unread'";
 		$db->query("$sql2");
+
+		die();
+		
+	}
+	if ($flag=="updatecurTime") {
+		$sql="update userinfo set curtime=now() where id=$curuserid";
+		$db->query($sql);
+		die();
+	}
+	
+	if ($flag=="checkcurtime") {
+		
+		$sql3="select * FROM userinfo,friendsinfo where userinfo.id=friendsinfo.friendid and friendsinfo.userid='$curuserid' and userState='online' and date_add(curtime,interval 5 second)<now()";
+		
+		$result = $db->get_results($sql3);
+
+		if ($result || count($result)!=0) {
+			echo json_encode($result);
+			die();
+		}
+		echo "noUnexpectLogout";
+		die();
+
+		
+		//$sql4="update userinfo set userState='offline' where "
+		die();
 	}
 
-
  ?>
+

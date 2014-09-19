@@ -27,7 +27,7 @@
 			else{
 
 				if (isset($_SESSION["myid"])) {
-					echo "已登陆";
+					//echo "已登陆";
 				}
 				else{
 					foreach ($result as $friend) {
@@ -41,7 +41,7 @@
 			$_SESSION["myid"]=$userid;
 			$_SESSION["mynickname"]=$res->userNickname;
 			$_SESSION["myheadimg"]=$res->userHeadImage;
-			$sql="update userinfo set userState='online' where concat(id)='".$userid."'";
+			$sql="update userinfo set userState='online',curtime=now() where concat(id)='".$userid."'";
 			$db->query($sql);
 
 			
