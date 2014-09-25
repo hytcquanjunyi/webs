@@ -1,11 +1,13 @@
 <?php
+
 ////////上传文件////////////
 if(isset($_POST["sub"])){
+  $text=isset($_POST["text"])?$_POST["text"]:"";
+  echo "a+$text";die();
  //$upfile="../upload_file/".$_FILES["file"]["name"];
  $name=time();//定义变量，保存图片名，以防图片的名字相同
  echo $name;
- $file=$_POST["file"];
- echo "$file";
+
  $name.=strrchr($_FILES["file"]["name"],".");//上传文件的名称
 
  echo $name;
@@ -41,6 +43,7 @@ if(isset($_POST["sub"])){
 </head>
 <body>
   <form method="post" action="" enctype="multipart/form-data">
+    <input type="text" name="text" >
     <input type="file" name="file">
     <input type="submit" name="sub" value="upload">
     <input type="reset" name="res" value="reset"/>

@@ -11,7 +11,7 @@
 
 	$msg=isset($_POST["msg"])?$_POST["msg"]:"";
 
-	$curuserid=$_SESSION['myid'];
+	$curuserid=isset($_SESSION['myid']);
 
 	$db=new ezSQL_mysql();
 	if ($flag=="sendmsg") {
@@ -196,6 +196,17 @@
 		
 		//$sql4="update userinfo set userState='offline' where "
 		die();
+	}
+	if ($flag=="checkuserexist") {
+		$useraccount=isset($_POST["useraccount"])?$_POST["useraccount"]:"";
+		$sql="select useraccount from userinfo where useraccount='$useraccount'";
+		$res=$db->get_var("$sql");
+		if ($res) {
+			echo "has";die();
+		}
+		// $result=isset($res)?$res:"1";
+		// echo "$result";
+		
 	}
 
  ?>

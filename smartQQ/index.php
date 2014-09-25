@@ -1,8 +1,15 @@
 <?php 
 	include_once("include/ez_sql_core.php");
 	include_once("include/ez_sql_mysql.php");
+	$db=new ezSQL_mysql();
 	session_start();
-	$userid=isset($_POST["userid"])?$_POST["userid"]:"";
+	$useraccount=isset($_POST["useraccount"])?$_POST["useraccount"]:"";
+
+	$selectuserid="select * from userinfo where useraccount='$useraccount'";
+	$res=$db->get_var($selectuserid);
+
+	$userid=isset($res);
+
 	$userpwd=isset($_POST["userpwd"])?$_POST["userpwd"]:"";
 	$db=new ezSQL_mysql();
 	if ($userid!=""&&$userpwd!="") {

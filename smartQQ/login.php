@@ -41,7 +41,7 @@
 				</span>
 				<div class="sigin-area-bg">
 					<div class="sigh-input">
-						<input name="userid" placeholder="ID" type="text" class="inputuserid" />
+						<input name="useraccount" placeholder="useraccount" type="text" class="inputuserid" />
 					</div>
 					<div class="sigh-input">
 						<input name="userpwd" type="password" class="inputuserpwd" />
