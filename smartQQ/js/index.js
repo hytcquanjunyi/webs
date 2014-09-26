@@ -288,6 +288,7 @@ function receivemsg(){
 			data:{flag:"receivemsg"},
 			async:false,
 			success:function(res){
+
 				if (res == "fail") {return;}
 				var array =eval(res);
 				//alert(array);
@@ -302,6 +303,7 @@ function receivemsg(){
 							data:{flag:"yidu",rmsgReceiverid:receiverid},
 							async:false,
 							success:function(res){
+
 								if (res == "fail1") {return;}
 								var array=eval(res);								
 								$.each(array,function(){

@@ -1,8 +1,10 @@
 <?php 
+	session_start();
 	include_once("../include/ez_sql_core.php");
 	include_once("../include/ez_sql_mysql.php");
-	session_start();
+	
 	$flag=isset($_POST["flag"])?$_POST["flag"]:"";
+
 	$msgReceiverid=isset($_POST["msgReceiverid"])?$_POST["msgReceiverid"]:"";
 
 	$rmsgReceiverid=isset($_POST["rmsgReceiverid"])?$_POST["rmsgReceiverid"]:"";
@@ -11,8 +13,9 @@
 
 	$msg=isset($_POST["msg"])?$_POST["msg"]:"";
 
-	$curuserid=isset($_SESSION['myid']);
-
+	$curuserid=$_SESSION["myid"];
+	
+	
 	$db=new ezSQL_mysql();
 	if ($flag=="sendmsg") {
 		$sql="insert into messageinfo(msgContent,msgSender,msgReceiver,msgSendTime,msgState) values('$msg','$curuserid','$msgReceiverid',now(),'unread')";
@@ -174,8 +177,10 @@
 		die();
 		
 	}
+	
 	if ($flag=="updatecurTime") {
 		$sql="update userinfo set curtime=now() where id=$curuserid";
+		
 		$db->query($sql);
 		die();
 	}

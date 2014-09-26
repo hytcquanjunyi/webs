@@ -14,4 +14,13 @@ $(function(){
 			}
 		});
 	});
+
+	$("#registbtn").click(function(){
+		$.ajax({
+			type:"post",
+			url:("ws/webservice.php"),
+			data:{flag:"checkuserexist",useraccount:account},
+			success:function(res)
+		});
+	});
 });

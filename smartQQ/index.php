@@ -1,22 +1,24 @@
 <?php 
 	include_once("include/ez_sql_core.php");
 	include_once("include/ez_sql_mysql.php");
-	$db=new ezSQL_mysql();
 	session_start();
+	$db=new ezSQL_mysql();
+	
 	$useraccount=isset($_POST["useraccount"])?$_POST["useraccount"]:"";
 
 	$selectuserid="select * from userinfo where useraccount='$useraccount'";
+
 	$res=$db->get_var($selectuserid);
 
-	$userid=isset($res);
+	$userid=$res;
 
 	$userpwd=isset($_POST["userpwd"])?$_POST["userpwd"]:"";
-	$db=new ezSQL_mysql();
+	$db=new ezSQL_mysql();	
 	if ($userid!=""&&$userpwd!="") {
-
 		
 		$sql="select * from userinfo where concat(id)='".$userid."' and userpwd='".$userpwd."'";
 		$res=$db->get_row($sql);
+
 		if(!$res){
 			header("location:login.php?error=failed");
 			die();
@@ -24,7 +26,7 @@
 		else{
 
 			$sql2="select * from friendsinfo where userid='$userid'";
-		
+			
 			$result=$db->get_results($sql2);
 
 			if (!$result) {
@@ -46,8 +48,10 @@
 			}
 
 			$_SESSION["myid"]=$userid;
+
 			$_SESSION["mynickname"]=$res->userNickname;
 			$_SESSION["myheadimg"]=$res->userHeadImage;
+			
 			$sql="update userinfo set userState='online',curtime=now() where concat(id)='".$userid."'";
 			$db->query($sql);
 

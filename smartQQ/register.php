@@ -85,7 +85,10 @@
 		$userpwd=isset($_POST["pwd"])?$_POST["pwd"]:"";
 		$useraccount=isset($_POST["useraccount"])?$_POST["useraccount"]:"";
 		$usernickname=isset($_POST["nickname"])?$_POST["nickname"]:"";		
-
+		if ($useraccount==""||$userpwd==""||$usernickname=="") {
+			echo "<script> alert('请将信息填写完整')</script>";
+			die();
+		}
 		$sql="insert into userinfo(useraccount,userpwd,userNickname,userHeadImage,userState) values('$useraccount','$userpwd','$usernickname','headimages/$name','offline')";		
 		//
 		$res=$db->query($sql);
@@ -94,7 +97,7 @@
 			$file_delete_path="headimages/$name";
 			if (file_exists($file_delete_path)) {
 				if(unlink($file_delete_path)){
-				echo "The file was deleted successfully";
+					echo "The file was deleted successfully";
 				}else{
 					echo "The specified file could not be deleted";
 				}
