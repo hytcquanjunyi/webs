@@ -30,8 +30,7 @@
 			$result=$db->get_results($sql2);
 
 			if (!$result) {
-				echo "null";
-				die();
+				
 			}
 			else{
 

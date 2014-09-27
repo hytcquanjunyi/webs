@@ -192,6 +192,7 @@ $(function(){
 					return;
 				}
 				var obj=eval(res);
+				$(".searchresultlistul2").html("");
 				$.each(obj,function(){
 					var html ="";
 					html+="<li>";
@@ -202,20 +203,20 @@ $(function(){
 					$(".searchresultlistul2").append(html);
 				});
 				
-
+				$(".addthis").click(function(){
+					var id=$(this).attr("friendid");			
+					$.ajax({
+						type:"POST",
+						url:"ws/webservice.php",
+						data:{flag:"addfriend",receiverid:id},
+						success:function(res){
+							alert(res);
+						}
+					});
+				});
 			}
 		});
-		$(document).on( "click",".addthis" ,function(){
-			var id=$(this).attr("friendid");			
-			$.ajax({
-				type:"POST",
-				url:"ws/webservice.php",
-				data:{flag:"addfriend",receiverid:id},
-				success:function(res){
-					alert(res);
-				}
-			});
-		});
+		
 
 	});
 
@@ -248,6 +249,7 @@ $(function(){
 					html+="	<span class='colum3' ><a friendid='"+this.msgSender+"' class='agreeaddthis'>同意</a></span>";
 					html+="</li>";
 					$(".requestlistul").append(html);
+					
 				});
 			}
 		});
