@@ -67,19 +67,19 @@
 		die();
 	}
 	if($flag=="searchfriend"){
-			$searchid=isset($_POST["searchid"])?$_POST["searchid"]:"";
+			$searchaccount=isset($_POST["searchaccount"])?$_POST["searchaccount"]:"";
 			$searchname=isset($_POST["searchname"])?$_POST["searchname"]:"";
 
 			$sql="select * from userinfo where 1=1 ";
 
-			if ($searchid!="") {
-				$sql.=" and id=".$searchid;
+			if ($searchaccount!="") {
+				$sql.=" and useraccount='".$searchaccount."'";
 			}
 			if ($searchname!="") {
 				$sql.=" and userNickname='".$searchname."'";
 			}
 			
-			if ($searchid =="" and $searchname=="") {
+			if ($searchaccount =="" and $searchname=="") {
 				echo "nocondition";
 				die();
 			}
@@ -133,7 +133,30 @@
 
 		$sql3="update messageinfo set msgState='done' where msgType='unnormal' and msgSender='$friendid' and msgReceiver='$curuserid' and msgContent='addfriend'";
 		$db->query($sql3);
-		echo "success";die();
+
+		$sql4="insert into messageinfo(msgType,msgContent,msgSender,msgReceiver,msgSendTime,msgState) values('unnormal','addfriend','$curuserid','$friendid',now(),'agree')";
+		$db->query($sql4);
+
+		$sql5="select id,useraccount,userNickname,userHeadImage,curtime, 1 as state from userinfo where id=$friendid ";
+
+		$result=$db->get_results($sql5);
+		if (!$result ||count($result)==0) {
+			echo "fail";die();
+		}
+
+		date_default_timezone_set('PRC');	//设置默认时区
+		$t=time()-strtotime($result[0]->curtime);
+		if ($t<5) {
+			$result[0]->state="online";
+		}else{
+			$result[0]->state="offline";
+		}
+		echo json_encode($result);
+
+		$sql6="insert into messageinfo(msgType,msgContent,msgSender,msgReceiver,msgSendTime,msgState) values('unnormal','login','$curuserid','$friendid',now(),'unread')";
+		$db->query($sql6);
+		die();
+		
 	}
 	if ($flag=="checklogin") {
 		$sql="select * from messageinfo,userinfo where messageinfo.msgSender=userinfo.id  and msgType='unnormal' and msgContent='login' and msgReceiver='$curuserid' and msgState='unread'";

@@ -83,7 +83,7 @@
 	<div class="addfriendArea">
 		<div class="closeaddfriendArea">x</div>
 		<div class="addfriendinfoArea">
-			<p><span class="spaninput">ID:</span><input type="text" id="adduserid"></p>
+			<p><span class="spaninput">ID:</span><input type="text" id="adduseraccount"></p>
 			<p><span class="spaninput">昵称:</span><input type="text" id="addusername"></p>
 		</div>
 		<div class="addfriendbtnArea"><input type="submit" class="searchfriendbtn" value="查找好友" /></div>
@@ -191,8 +191,8 @@
 				<ul class="requestlistul">
 					<!-- <li>
 						<span class="colum2">ID为1的小明请求加你为好友</span>
-						<span class="colum3" ><a friendid="1" class="agreeaddthis">同意</a></span>
-					</li> -->
+						<span class="colum3" ><a friendid="1" class="agreeaddthis">同意</a><a friendid="1" class="ignorethis">忽略</a></span>
+					</li>  -->
 					
 				</ul>
 		</div>

@@ -175,14 +175,14 @@ $(function(){
 
 	$(".searchfriendbtn").click(function(){
 		$(".searchresultlistul2").html("");
-		var id=$("#adduserid").val();
+		var account=$("#adduseraccount").val();
 		var name=$("#addusername").val();
 		$.ajax({
 			type:"POST",
 			url:"ws/webservice.php",
-			data:{flag:"searchfriend",searchid:id,searchname:name},
+			data:{flag:"searchfriend",searchaccount:account,searchname:name},
 			success:function(res){
-
+				alert(res);
 				if (res=="noone") {
 					alert("没有符合条件的");
 					return;
@@ -235,6 +235,7 @@ $(function(){
 			url:"ws/webservice.php",
 			data:{flag:"dealaddrequest"},
 			success:function(res){
+
 				if (res=="noresult") {
 					$(".requestlistul").append("<li>没有任何请求</li>");
 					
@@ -246,7 +247,7 @@ $(function(){
 					var html="";
 					html+="<li>";
 					html+="	<span class='colum2'>ID为"+this.msgSender+"的"+this.userNickname+"请求加你为好友</span>";
-					html+="	<span class='colum3' ><a friendid='"+this.msgSender+"' class='agreeaddthis'>同意</a></span>";
+					html+="	<span class='colum3' ><a friendid='"+this.msgSender+"' class='agreeaddthis'>同意</a><a friendid='"+this.msgSender+"' class='ignorethis'> 忽略</a> </span>";
 					html+="</li>";
 					$(".requestlistul").append(html);
 					
@@ -260,15 +261,52 @@ $(function(){
 
 	$(document).on("click",".agreeaddthis",function(){
 		var id=$(this).attr("friendid");
+		$(this).parent().html("已同意");
 		$.ajax({
 			type:"post",
 			url:("ws/webservice.php"),
 			data:{flag:"agreethis",friendid:id},
 			success:function(res){
-				alert(res);
+				
+				if (res=="fail") {
+					return;
+				}
+				var obj=eval(res);
+				$.each(obj,function(){
+					
+					if (this.state=="online"){
+						var html="";
+						html+="<li id='friend"+this.id+"' friendid='"+this.id+"'  friendnickname='"+this.userNickname+"' class='friendlistli'>";
+						html+=	"<div class='friendlisthead'> <img src= "+this.userHeadImage+" /></div>";
+						html+=	"<div class='friendInfoArea'>";
+						html+=	"	<span class='friendnickname'>"+this.userNickname+"</span>";
+						html+=	"	<div class='messageicon'></div>	";
+						html+=	"</div>";
+						html+="</li>";
+						$(".onlinelist").append(html);
+					}else{
+						var html="";
+						html+="<li id='friend"+this.id+"' friendid='"+this.id+"'  friendnickname='"+this.userNickname+"' class='friendlistli'>";
+						html+=	"<div class='friendlisthead'> <img src= "+this.userHeadImage+" /></div>";
+						html+=	"<div class='friendInfoArea'>";
+						html+=	"	<span class='friendnickname'>"+this.userNickname+"</span>";
+						html+=	"	<div class='messageicon'></div>	";
+						html+=	"</div>";
+						html+="</li>";
+						$(".offlinelist").append(html);
+					}
+					
+				});
 			}
 		});
 	});
+	$(document).on("click",".ignorethis",function(){
+		var id=$(this).attr("friendid");
+		$(this).parent().html("已忽略");
+		
+	});
+
+
 	/*$(".agreeaddthis").click(function(){
 		var id=$(this).attr("friendid");
 		$,ajax({

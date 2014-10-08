@@ -63,7 +63,7 @@ input{outline: none;}
 	line-height: 40px;
 	padding-top: 20px;
 }
-#adduserid,#addusername{
+#adduseraccount,#addusername{
 	width: 230px;
 	height: 40px;
 	font-size: 18px;
@@ -382,7 +382,7 @@ input{outline: none;}
 	cursor:pointer;
 }
 .requestlistArea{
-	width: 340px;
+	width: 500px;
 	height: 160px;
 	padding: 20px;
 	border: 1px solid #ccc;
@@ -399,7 +399,7 @@ input{outline: none;}
 	cursor: pointer;
 }
 .requestlistul{
-	width: 300px;
+	width: 400px;
 	height: 130px;
 	margin: auto;
 	overflow: auto;
@@ -415,7 +415,7 @@ input{outline: none;}
 	text-align: center;
 }
 .colum3{
-	width: 40px;
+	width: auto;
 	height: 30px;
 	line-height: 30px;
 	float: left;
